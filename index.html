@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>旅と趣味の記録 | Personal</title>
+  <title>旅と趣味の記録 | eingypsygypsy24</title>
   <style>
     :root {
       --bg: #f5f7fa; --card: #ffffff; --text: #111827;
@@ -93,63 +93,47 @@
     /* Region Sections */
     .regions-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-      margin-bottom: 2rem;
+      grid-template-columns: repeat(2, 1fr); /* 2列配置に変更 */
+      gap: 2rem;
+      margin-bottom: 3rem;
     }
     .region-card {
       background: var(--card);
-      border-radius: 12px;
+      border-radius: 16px;
       padding: 1.5rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
-    .region-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    }
-    .region-europe { border-top: 4px solid var(--europe); }
-    .region-westasia { border-top: 4px solid var(--westasia); }
-    .region-eastasia { border-top: 4px solid var(--eastasia); }
-    .region-other { border-top: 4px solid var(--other); }
+    .region-europe { border-top: 6px solid var(--europe); }
+    .region-westasia { border-top: 6px solid var(--westasia); }
+    .region-eastasia { border-top: 6px solid var(--eastasia); }
+    .region-other { border-top: 6px solid var(--other); }
     
-    .region-icon {
-      font-size: 2.5rem;
-      margin-bottom: 0.8rem;
-    }
     .region-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-    .region-desc {
-      color: var(--sub);
-      font-size: 0.9rem;
-      line-height: 1.5;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
     
-    /* Stats */
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* Instagram Embed Area */
+    .insta-box {
+      display: flex;
+      flex-direction: column;
       gap: 1rem;
-      margin-bottom: 2rem;
+      max-height: 800px;
+      overflow-y: auto;
+      padding-right: 5px;
     }
-    .stat-card {
-      background: var(--card);
-      padding: 1.5rem;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    /* Instagram埋め込みのスタイル調整 */
+    .insta-box blockquote.instagram-media {
+      margin: 0 !important;
+      width: 100% !important;
+      min-width: unset !important;
+      border-radius: 8px !important;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
     }
-    .stat-number {
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: var(--travel);
-      display: block;
-    }
-    .stat-label { color: var(--sub); font-size: 0.9rem; }
     
     /* Hobby Sections */
     .hobby-grid {
@@ -163,25 +147,12 @@
       padding: 2rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
-    .hobby-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
+    .hobby-icon { font-size: 3rem; margin-bottom: 1rem; }
     .hobby-brew { border-top: 4px solid var(--brew); }
     .hobby-cook { border-top: 4px solid var(--cook); }
     .hobby-box { border-top: 4px solid var(--box); }
     .hobby-title { font-size: 1.5rem; margin-bottom: 0.5rem; }
     .hobby-desc { color: var(--sub); margin-bottom: 1rem; }
-    
-    /* Links */
-    .links { display: grid; gap: 0.7rem; }
-    .link {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1rem 1.2rem; background: var(--bg); border: 1px solid var(--border);
-      border-radius: 10px; text-decoration: none; color: var(--text); transition: 0.2s;
-    }
-    .link:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
-    .link span { font-weight: 500; }
     
     footer {
       text-align: center;
@@ -191,17 +162,9 @@
       border-top: 1px solid var(--border);
     }
     
-    @media (max-width: 968px) {
-      .regions-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media (max-width: 600px) {
-      .regions-grid {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 768px) {
+      .regions-grid { grid-template-columns: 1fr; } /* スマホは1列 */
       h1 { font-size: 1.5rem; }
-      .stats { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -216,7 +179,7 @@
     </div>
   </nav>
 
-  <!-- Travel Section (Main) -->
+  <!-- Travel Section -->
   <section id="travel" class="section active">
     <header>
       <div class="avatar">🌏</div>
@@ -224,23 +187,7 @@
       <p class="tagline">9ヶ月にわたる冒険の記録</p>
     </header>
     
-    <!-- Stats -->
-    <div class="stats">
-      <div class="stat-card">
-        <span class="stat-number">9</span>
-        <span class="stat-label">ヶ月</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number">∞</span>
-        <span class="stat-label">思い出</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number">🗺️</span>
-        <span class="stat-label">MY MAPで確認</span>
-      </div>
-    </div>
-    
-    <!-- Google My Maps Embed -->
+    <!-- Map -->
     <div class="map-container">
       <div class="map-wrapper">
         <iframe 
@@ -249,129 +196,110 @@
         </iframe>
       </div>
     </div>
-    
-    <!-- Region Sections -->
-    <h2 style="margin-bottom: 1.5rem; font-size: 1.5rem; text-align: center;">📍 地域別エピソード</h2>
+
+    <!-- Region + Instagram -->
     <div class="regions-grid">
+      
+      <!-- ヨーロッパ -->
       <div class="region-card region-europe">
-        <div class="region-icon">🏰</div>
-        <div class="region-title">ヨーロッパ</div>
-        <div class="region-desc">歴史ある街並み、文化、人々との出会い。西欧から東欧までの多様な体験。</div>
+        <div class="region-title">🏰 ーロッパ</div>
+        <div class="insta-box">
+          <!-- ▼ ここにPC版Instagramの「埋め込みコード」を貼り付け -->
+          <p style="color:#999; text-align:center;">PC版Instagramの「埋め込む」からコードをコピーして貼り付けると表示されます</p>
+          <!-- 例：<blockquote class="instagram-media" ...>...</blockquote> -->
+        </div>
       </div>
-      
+
+      <!-- 西アジア -->
       <div class="region-card region-westasia">
-        <div class="region-icon">🕌</div>
-        <div class="region-title">西アジア</div>
-        <div class="region-desc">中東の砂漠、オアシス、伝統的な文化と温かい人々の歓迎。</div>
+        <div class="region-title">🕌 西アジア</div>
+        <div class="insta-box">
+           <!-- ▼ ここに西アジアの写真を貼り付け -->
+           <p style="color:#999; text-align:center;">PC版Instagramの「埋め込む」からコードをコピーして貼り付けると表示されます</p>
+        </div>
       </div>
-      
+
+      <!-- 東アジア -->
       <div class="region-card region-eastasia">
-        <div class="region-icon">🏯</div>
-        <div class="region-title">東アジア</div>
-        <div class="region-desc">中央アジアの山岳地帯、シルクロード、そして極東への旅路。</div>
+        <div class="region-title">🏯 東アジア</div>
+        <div class="insta-box">
+           <!-- ▼ ここに東アジアの写真を貼り付け -->
+           <p style="color:#999; text-align:center;">PC版Instagramの「埋め込む」からコードをコピーして貼り付けると表示されます</p>
+        </div>
       </div>
-      
+
+      <!-- その他 -->
       <div class="region-card region-other">
-        <div class="region-icon">🎒</div>
-        <div class="region-title">その他</div>
-        <div class="region-desc">旅の準備、移動中の出来事、忘れられない瞬間たち。</div>
+        <div class="region-title">🎒 その他</div>
+        <div class="insta-box">
+           <!-- ▼ ここにその他の写真を貼り付け -->
+           <p style="color:#999; text-align:center;">PC版Instagramの「埋め込む」からコードをコピーして貼り付けると表示されます</p>
+        </div>
       </div>
+
     </div>
     
-    <div style="background: var(--card); padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
-      <h3 style="margin-bottom: 0.5rem;">📍 旅の詳細を見る</h3>
-      <p style="color: var(--sub); margin-bottom: 1rem;">Google My Mapsでルートと各地点の詳細を確認できます</p>
-      <a href="https://www.google.com/maps/d/u/0/edit?hl=ja&mid=1PTaR_Ji4j2ka1GdQN8KCEAeVErTuES4&ll=9.08303561954635%2C0&z=2" 
-         target="_blank" 
-         class="link" 
-         style="display: inline-flex; background: var(--travel); color: white; border: none; padding: 0.8rem 1.5rem;">
-        <span>MY MAPを開く</span>
-        <span>→</span>
+    <!-- Link to Instagram -->
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="https://www.instagram.com/eingypsygypsy24/" target="_blank" 
+         style="display: inline-block; background: #E1306C; color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 10px rgba(225,48,108,0.3);">
+         📸 全写真は Instagram で見る
       </a>
     </div>
   </section>
 
-  <!-- Brewing Section -->
+  <!-- Other Sections (Brew/Cook/Box) -->
   <section id="brew" class="section">
     <header style="background: linear-gradient(135deg, var(--brew), #b45309);">
       <div class="avatar">🍺</div>
       <h1>醸造</h1>
       <p class="tagline">手作りのビール・お酒</p>
     </header>
-    
     <div class="hobby-grid">
       <div class="hobby-card hobby-brew">
         <div class="hobby-icon">🍻</div>
         <h2 class="hobby-title">クラフトビール</h2>
-        <p class="hobby-desc">自家製ビールの醸造記録</p>
-        <p style="color: var(--sub);">使用した麦芽、ホップ、酵母の種類や、仕込みの過程を記録しています。</p>
-      </div>
-      
-      <div class="hobby-card hobby-brew">
-        <div class="hobby-icon">🍶</div>
-        <h2 class="hobby-title">その他醸造</h2>
-        <p class="hobby-desc">果実酒・味噌・醤油など</p>
-        <p style="color: var(--sub);">季節の果物を使った果実酒や、発酵食品も作っています。</p>
+        <p class="hobby-desc">自家製ビールの醸造記録。麦芽やホップの選び方、発酵過程を記録しています。</p>
       </div>
     </div>
   </section>
 
-  <!-- Cooking Section -->
   <section id="cook" class="section">
     <header style="background: linear-gradient(135deg, var(--cook), #b91c1c);">
       <div class="avatar">🍳</div>
       <h1>料理</h1>
       <p class="tagline">旅で学んだ味と創作料理</p>
     </header>
-    
     <div class="hobby-grid">
       <div class="hobby-card hobby-cook">
         <div class="hobby-icon">🌮</div>
         <h2 class="hobby-title">各国料理</h2>
-        <p class="hobby-desc">旅先で覚えたレシピ</p>
-        <p style="color: var(--sub);">ユーラシア各地で学んだ現地の味を再現しています。</p>
-      </div>
-      
-      <div class="hobby-card hobby-cook">
-        <div class="hobby-icon">🍜</div>
-        <h2 class="hobby-title">創作料理</h2>
-        <p class="hobby-desc">オリジナルレシピ</p>
-        <p style="color: var(--sub);">様々な文化の影響を受けた融合料理も得意です。</p>
+        <p class="hobby-desc">ユーラシア各地で学んだレシピを再現。</p>
       </div>
     </div>
   </section>
 
-  <!-- Boxing Section -->
   <section id="box" class="section">
     <header style="background: linear-gradient(135deg, var(--box), #5b21b6);">
       <div class="avatar">🥊</div>
       <h1>ボクシング</h1>
       <p class="tagline">心身を鍛える格闘技</p>
     </header>
-    
-    <div class="hobby-card hobby-box" style="margin-bottom: 2rem;">
+    <div class="hobby-card hobby-box">
       <div class="hobby-icon">🥊</div>
-      <h2 class="hobby-title">トレーニング記録</h2>
-      <p class="hobby-desc">日々の練習と試合の記録</p>
-      <p style="color: var(--sub); margin-bottom: 1rem;">
-        ボクシングを通じて、体力だけでなく精神力も鍛えています。<br>
-        旅先でも現地のジムで練習することがあります。
-      </p>
+      <h2 class="hobby-title">トレーニング</h2>
+      <p class="hobby-desc">日々の練習記録や旅先でのスパーリング。</p>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2026 Your Name. All adventures & hobbies.</p>
+    <p>&copy; 2026 eingypsygypsy24. All adventures.</p>
   </footer>
 
   <script>
     function showSection(sectionName) {
-      document.querySelectorAll('.section').forEach(section => {
-        section.classList.remove('active');
-      });
-      document.querySelectorAll('.nav-btn').forEach(btn => {
-        btn.classList.remove('active');
-      });
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
       document.getElementById(sectionName).classList.add('active');
       event.target.classList.add('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
