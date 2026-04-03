@@ -3,61 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>旅と趣味の記録 | eingypsygypsy24</title>
+  <title>旅の記録 | eingypsygypsy24</title>
   <style>
     :root {
       --bg: #f5f7fa; --card: #ffffff; --text: #111827;
       --sub: #4b5563; --accent: #2563eb; --border: #e5e7eb;
-      --travel: #059669; --brew: #92400e; --cook: #dc2626; --box: #7c3aed;
-      --europe: #0ea5e9; --westasia: #f59e0b; --eastasia: #ef4444; --other: #8b5cf6;
+      --europe: #0ea5e9; --westasia: #f59e0b; --eastasia: #ef4444; 
+      --southeastasia: #10b981; --other: #8b5cf6;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
-      background: var(--bg); color: var(--text); line-height: 1.6; padding: 0;
+      background: var(--bg); color: var(--text); line-height: 1.6;
     }
-    
-    /* Navigation */
-    nav {
-      background: var(--card);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .nav-wrap {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem;
-      display: flex;
-      gap: 1rem;
-      overflow-x: auto;
-    }
-    .nav-btn {
-      padding: 0.6rem 1.2rem;
-      border: 2px solid var(--border);
-      background: var(--bg);
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 500;
-      white-space: nowrap;
-      transition: 0.3s;
-    }
-    .nav-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
-    .nav-btn.active { background: var(--travel); color: white; border-color: var(--travel); }
-    
-    /* Sections */
-    .section { display: none; padding: 2rem 1rem; max-width: 1200px; margin: 0 auto; }
-    .section.active { display: block; }
     
     /* Header */
     header {
       text-align: center;
       padding: 3rem 1rem;
-      background: linear-gradient(135deg, var(--travel), var(--accent));
+      background: linear-gradient(135deg, #059669, #2563eb);
       color: white;
-      margin-bottom: 2rem;
-      border-radius: 0 0 16px 16px;
     }
     .avatar {
       width: 120px; height: 120px; border-radius: 50%;
@@ -69,19 +34,19 @@
     h1 { font-size: 2rem; margin-bottom: 0.5rem; }
     .tagline { opacity: 0.9; font-size: 1rem; }
     
-    /* Map Container */
+    /* Map */
     .map-container {
-      background: var(--card);
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      margin-bottom: 2rem;
+      max-width: 1200px;
+      margin: -2rem auto 2rem;
+      padding: 0 1rem;
     }
     .map-wrapper {
       position: relative;
       padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
     .map-wrapper iframe {
       position: absolute;
@@ -90,219 +55,401 @@
       border: none;
     }
     
-    /* Region Sections */
-    .regions-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 2列配置に変更 */
-      gap: 2rem;
-      margin-bottom: 3rem;
+    /* Region Cards */
+    .regions-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
     }
     .region-card {
       background: var(--card);
       border-radius: 16px;
-      padding: 1.5rem;
+      margin-bottom: 2rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      overflow: hidden;
     }
-    .region-europe { border-top: 6px solid var(--europe); }
-    .region-westasia { border-top: 6px solid var(--westasia); }
-    .region-eastasia { border-top: 6px solid var(--eastasia); }
-    .region-other { border-top: 6px solid var(--other); }
-    
+    .region-header {
+      padding: 1.5rem 2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.3s;
+      border-top: 6px solid;
+    }
+    .region-header:hover { background: #f9fafb; }
     .region-title {
-      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 1.5rem;
       font-weight: 700;
+    }
+    .region-icon { font-size: 2rem; }
+    .toggle-icon {
+      font-size: 1.5rem;
+      transition: transform 0.3s;
+      color: var(--sub);
+    }
+    .region-card.active .toggle-icon {
+      transform: rotate(180deg);
+    }
+    
+    /* Region Colors */
+    .region-europe { border-color: var(--europe); }
+    .region-europe .region-title { color: var(--europe); }
+    .region-westasia { border-color: var(--westasia); }
+    .region-westasia .region-title { color: var(--westasia); }
+    .region-eastasia { border-color: var(--eastasia); }
+    .region-eastasia .region-title { color: var(--eastasia); }
+    .region-southeastasia { border-color: var(--southeastasia); }
+    .region-southeastasia .region-title { color: var(--southeastasia); }
+    .region-other { border-color: var(--other); }
+    .region-other .region-title { color: var(--other); }
+    
+    /* Countries Grid */
+    .countries-grid {
+      display: none;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      padding: 0 2rem 2rem;
+    }
+    .region-card.active .countries-grid {
+      display: grid;
+    }
+    .country-card {
+      background: #f9fafb;
+      border-radius: 12px;
+      padding: 1.5rem;
+      border-left: 4px solid var(--accent);
+    }
+    .country-name {
+      font-size: 1.2rem;
+      font-weight: 600;
       margin-bottom: 1rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
     
-    /* Instagram Embed Area */
-    .insta-box {
+    /* Instagram Embed */
+    .insta-container {
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      max-height: 800px;
-      overflow-y: auto;
-      padding-right: 5px;
     }
-    /* Instagram埋め込みのスタイル調整 */
-    .insta-box blockquote.instagram-media {
-      margin: 0 !important;
+    .insta-placeholder {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+      color: var(--sub);
+      border: 2px dashed var(--border);
+    }
+    blockquote.instagram-media {
+      margin: 0 auto !important;
       width: 100% !important;
       min-width: unset !important;
-      border-radius: 8px !important;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
     }
     
-    /* Hobby Sections */
-    .hobby-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
+    /* Instagram Link Button */
+    .insta-link {
+      text-align: center;
+      padding: 2rem 1rem;
     }
-    .hobby-card {
-      background: var(--card);
-      border-radius: 16px;
-      padding: 2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    .insta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-    .hobby-icon { font-size: 3rem; margin-bottom: 1rem; }
-    .hobby-brew { border-top: 4px solid var(--brew); }
-    .hobby-cook { border-top: 4px solid var(--cook); }
-    .hobby-box { border-top: 4px solid var(--box); }
-    .hobby-title { font-size: 1.5rem; margin-bottom: 0.5rem; }
-    .hobby-desc { color: var(--sub); margin-bottom: 1rem; }
+    .insta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(220, 39, 67, 0.4);
+    }
     
     footer {
       text-align: center;
       padding: 2rem;
-      margin-top: 3rem;
+      background: var(--card);
       color: var(--sub);
       border-top: 1px solid var(--border);
     }
     
     @media (max-width: 768px) {
-      .regions-grid { grid-template-columns: 1fr; } /* スマホは1列 */
       h1 { font-size: 1.5rem; }
+      .region-header { padding: 1.2rem 1rem; }
+      .countries-grid { 
+        grid-template-columns: 1fr;
+        padding: 0 1rem 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav>
-    <div class="nav-wrap">
-      <button class="nav-btn active" onclick="showSection('travel')">🌍 旅行</button>
-      <button class="nav-btn" onclick="showSection('brew')">🍺 醸造</button>
-      <button class="nav-btn" onclick="showSection('cook')">🍳 料理</button>
-      <button class="nav-btn" onclick="showSection('box')">🥊 ボクシング</button>
-    </div>
-  </nav>
+  <header>
+    <div class="avatar">🌏</div>
+    <h1>ユーラシア大陸横断の旅</h1>
+    <p class="tagline">9ヶ月にわたる冒険の記録</p>
+  </header>
 
-  <!-- Travel Section -->
-  <section id="travel" class="section active">
-    <header>
-      <div class="avatar">🌏</div>
-      <h1>ユーラシア大陸横断の旅</h1>
-      <p class="tagline">9ヶ月にわたる冒険の記録</p>
-    </header>
+  <!-- Google My Maps -->
+  <div class="map-container">
+    <div class="map-wrapper">
+      <iframe 
+        src="https://www.google.com/maps/d/embed?mid=1PTaR_Ji4j2ka1GdQN8KCEAeVErTuES4&hl=ja&ll=45,45&z=3"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Regions -->
+  <div class="regions-container">
     
-    <!-- Map -->
-    <div class="map-container">
-      <div class="map-wrapper">
-        <iframe 
-          src="https://www.google.com/maps/d/embed?mid=1PTaR_Ji4j2ka1GdQN8KCEAeVErTuES4&hl=ja&ll=45,45&z=3"
-          allowfullscreen>
-        </iframe>
+    <!-- ヨーロッパ -->
+    <div class="region-card region-europe">
+      <div class="region-header" onclick="toggleRegion(this)">
+        <div class="region-title">
+          <span class="region-icon">🏰</span>
+          <span>ヨーロッパ</span>
+        </div>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="countries-grid">
+        <!-- 国別セクション -->
+        <div class="country-card" style="border-color: var(--europe);">
+          <div class="country-name">🇬🇧 イギリス</div>
+          <div class="insta-container">
+            <!-- Instagram埋め込みコードをここに貼り付け -->
+            <div class="insta-placeholder">
+              PC版Instagramの「埋め込む」からコードをコピーして貼り付け
+            </div>
+          </div>
+        </div>
+        
+        <div class="country-card" style="border-color: var(--europe);">
+          <div class="country-name">🇫🇷 フランス</div>
+          <div class="insta-container">
+            <div class="insta-placeholder">
+              PC版Instagramの「埋め込む」からコードをコピーして貼り付け
+            </div>
+          </div>
+        </div>
+        
+        <div class="country-card" style="border-color: var(--europe);">
+          <div class="country-name">🇮🇹 イタリア</div>
+          <div class="insta-container">
+            <div class="insta-placeholder">
+              PC版Instagramの「埋め込む」からコードをコピーして貼り付け
+            </div>
+          </div>
+        </div>
+        
+        <div class="country-card" style="border-color: var(--europe);">
+          <div class="country-name">🇪🇸 スペイン</div>
+          <div class="insta-container">
+            <div class="insta-placeholder">
+              PC版Instagramの「埋め込む」からコードをコピーして貼り付け
+            </div>
+          </div>
+        </div>
+        
+        <!-- 必要に応じて国を追加 -->
       </div>
     </div>
 
-    <!-- Region + Instagram -->
-    <div class="regions-grid">
-      
-      <!-- ヨーロッパ -->
-      <div class="region-card region-europe">
-        <div class="region-title">🏰 ーロッパ</div>
-        <div class="insta-box">
-          <!-- ▼ ここにPC版Instagramの「埋め込みコード」を貼り付け -->
-          <p style="color:#999; text-align:center;">PC版Instagramの「埋め込む」からコードをコピーして貼り付けると表示されます</p>
-          <!-- 例：<blockquote class="instagram-media" ...>...</blockquote> -->
+    <!-- 西アジア -->
+    <div class="region-card region-westasia">
+      <div class="region-header" onclick="toggleRegion(this)">
+        <div class="region-title">
+          <span class="region-icon">🕌</span>
+          <span>西アジア</span>
+        </div>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="countries-grid">
+        <div class="country-card" style="border-color: var(--westasia);">
+          <div class="country-name">🇹🇷 トルコ</div>
+          <div class="insta-container">
+            <div class="insta-placeholder">
+              PC版Instagramの「埋め込む」からコードをコピーして貼り付け
+            </div>
+          </div>
+        </div>
+        
+        <div class="country-card" style="border-color: var(--westasia);">
+          <div class="country-name">🇮🇷 イラン</div>
+          <div class="insta-container">
+            <div class="insta-placeholder">
+              PC版Instagramの「埋め込む」からコードをコピーして貼り付け
+            </div>
+          </div>
+        </div>
+        
+        <div class="country-card" style="border-color: var(--westasia);">
+          <div class="country-name">🇬🇪 ジョージア</div>
+          <div class="insta-container">
+            <div class="insta-placeholder">
+              PC版Instagramの「埋め込む」からコードをコピーして貼り付け
+            </div>
+          </div>
         </div>
       </div>
-
-      <!-- 西アジア -->
-      <div class="region-card region-westasia">
-        <div class="region-title">🕌 西アジア</div>
-        <div class="insta-box">
-           <!-- ▼ ここに西アジアの写真を貼り付け -->
-           <p style="color:#999; text-align:center;">PC版Instagramの「埋め込む」からコードをコピーして貼り付けると表示されます</p>
-        </div>
-      </div>
-
-      <!-- 東アジア -->
-      <div class="region-card region-eastasia">
-        <div class="region-title">🏯 東アジア</div>
-        <div class="insta-box">
-           <!-- ▼ ここに東アジアの写真を貼り付け -->
-           <p style="color:#999; text-align:center;">PC版Instagramの「埋め込む」からコードをコピーして貼り付けると表示されます</p>
-        </div>
-      </div>
-
-      <!-- その他 -->
-      <div class="region-card region-other">
-        <div class="region-title">🎒 その他</div>
-        <div class="insta-box">
-           <!-- ▼ ここにその他の写真を貼り付け -->
-           <p style="color:#999; text-align:center;">PC版Instagramの「埋め込む」からコードをコピーして貼り付けると表示されます</p>
-        </div>
-      </div>
-
     </div>
-    
-    <!-- Link to Instagram -->
-    <div style="text-align: center; margin-top: 2rem;">
-      <a href="https://www.instagram.com/eingypsygypsy24/" target="_blank" 
-         style="display: inline-block; background: #E1306C; color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 10px rgba(225,48,108,0.3);">
-         📸 全写真は Instagram で見る
+
+    <!-- 東アジア -->
+    <div class="region-card region-eastasia">
+      <div class="region-header" onclick="toggleRegion(this)">
+        <div class="region-title">
+          <span class="region-icon">🏯</span>
+          <span>東アジア</span>
+        </div>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="countries-grid">
+        <div class="country-card" style="border-color: var(--eastasia);">
+          <div class="country-name">🇨 中国</div>
+          <div class="insta-container">
+            <div class="insta-placeholder">
+              PC版Instagramの「埋め込む」からコードをコピーして貼り付け
+            </div>
+          </div>
+        </div>
+        
+        <div class="country-card" style="border-color: var(--eastasia);">
+          <div class="country-name">🇲🇳 モンゴル</div>
+          <div class="insta-container">
+            <div class="insta-placeholder">
+              PC版Instagramの「埋め込む」からコードをコピーして貼り付け
+            </div>
+          </div>
+        </div>
+        
+        <div class="country-card" style="border-color: var(--eastasia);">
+          <div class="country-name">🇯🇵 日本</div>
+          <div class="insta-container">
+            <div class="insta-placeholder">
+              PC版Instagramの「埋め込む」からコードをコピーして貼り付け
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 東南アジア -->
+    <div class="region-card region-southeastasia">
+      <div class="region-header" onclick="toggleRegion(this)">
+        <div class="region-title">
+          <span class="region-icon">🏝️</span>
+          <span>東南アジア</span>
+        </div>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="countries-grid">
+        <div class="country-card" style="border-color: var(--southeastasia);">
+          <div class="country-name">🇹🇭 タイ</div>
+          <div class="insta-container">
+            <div class="insta-placeholder">
+              PC版Instagramの「埋め込む」からコードをコピーして貼り付け
+            </div>
+          </div>
+        </div>
+        
+        <div class="country-card" style="border-color: var(--southeastasia);">
+          <div class="country-name">🇻🇳 ベトナム</div>
+          <div class="insta-container">
+            <div class="insta-placeholder">
+              PC版Instagramの「埋め込む」からコードをコピーして貼り付け
+            </div>
+          </div>
+        </div>
+        
+        <div class="country-card" style="border-color: var(--southeastasia);">
+          <div class="country-name">🇮🇩 インドネシア</div>
+          <div class="insta-container">
+            <div class="insta-placeholder">
+              PC版Instagramの「埋め込む」からコードをコピーして貼り付け
+            </div>
+          </div>
+        </div>
+        
+        <div class="country-card" style="border-color: var(--southeastasia);">
+          <div class="country-name">🇲 マレーシア</div>
+          <div class="insta-container">
+            <div class="insta-placeholder">
+              PC版Instagramの「埋め込む」からコードをコピーして貼り付け
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- その他 -->
+    <div class="region-card region-other">
+      <div class="region-header" onclick="toggleRegion(this)">
+        <div class="region-title">
+          <span class="region-icon">🎒</span>
+          <span>その他</span>
+        </div>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="countries-grid">
+        <div class="country-card" style="border-color: var(--other);">
+          <div class="country-name">✈️ 移動中・空港</div>
+          <div class="insta-container">
+            <div class="insta-placeholder">
+              PC版Instagramの「埋め込む」からコードをコピーして貼り付け
+            </div>
+          </div>
+        </div>
+        
+        <div class="country-card" style="border-color: var(--other);">
+          <div class="country-name">🎒 旅の準備</div>
+          <div class="insta-container">
+            <div class="insta-placeholder">
+              PC版Instagramの「埋め込む」からコードをコピーして貼り付け
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Instagram Link -->
+    <div class="insta-link">
+      <a href="https://www.instagram.com/_ein" target="_blank" class="insta-button">
+        <span>📸</span>
+        <span>全写真は Instagram で見る</span>
       </a>
     </div>
-  </section>
-
-  <!-- Other Sections (Brew/Cook/Box) -->
-  <section id="brew" class="section">
-    <header style="background: linear-gradient(135deg, var(--brew), #b45309);">
-      <div class="avatar">🍺</div>
-      <h1>醸造</h1>
-      <p class="tagline">手作りのビール・お酒</p>
-    </header>
-    <div class="hobby-grid">
-      <div class="hobby-card hobby-brew">
-        <div class="hobby-icon">🍻</div>
-        <h2 class="hobby-title">クラフトビール</h2>
-        <p class="hobby-desc">自家製ビールの醸造記録。麦芽やホップの選び方、発酵過程を記録しています。</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="cook" class="section">
-    <header style="background: linear-gradient(135deg, var(--cook), #b91c1c);">
-      <div class="avatar">🍳</div>
-      <h1>料理</h1>
-      <p class="tagline">旅で学んだ味と創作料理</p>
-    </header>
-    <div class="hobby-grid">
-      <div class="hobby-card hobby-cook">
-        <div class="hobby-icon">🌮</div>
-        <h2 class="hobby-title">各国料理</h2>
-        <p class="hobby-desc">ユーラシア各地で学んだレシピを再現。</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="box" class="section">
-    <header style="background: linear-gradient(135deg, var(--box), #5b21b6);">
-      <div class="avatar">🥊</div>
-      <h1>ボクシング</h1>
-      <p class="tagline">心身を鍛える格闘技</p>
-    </header>
-    <div class="hobby-card hobby-box">
-      <div class="hobby-icon">🥊</div>
-      <h2 class="hobby-title">トレーニング</h2>
-      <p class="hobby-desc">日々の練習記録や旅先でのスパーリング。</p>
-    </div>
-  </section>
+    
+  </div>
 
   <footer>
     <p>&copy; 2026 eingypsygypsy24. All adventures.</p>
   </footer>
 
   <script>
-    function showSection(sectionName) {
-      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-      document.getElementById(sectionName).classList.add('active');
-      event.target.classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    function toggleRegion(header) {
+      const card = header.parentElement;
+      const wasActive = card.classList.contains('active');
+      
+      // Close all regions
+      document.querySelectorAll('.region-card').forEach(c => {
+        c.classList.remove('active');
+      });
+      
+      // Open clicked region if it wasn't active
+      if (!wasActive) {
+        card.classList.add('active');
+      }
     }
   </script>
 </body>
