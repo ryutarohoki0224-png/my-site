@@ -20,29 +20,29 @@
     /* Header */
     header {
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 2rem 1rem 1.5rem;  /* ← 上下を少し詰める */
       background: linear-gradient(135deg, #059669, #2563eb);
       color: white;
     }
     .avatar {
-      width: 120px; height: 120px; border-radius: 50%;
-      margin: 0 auto 1rem;
+      width: 100px; height: 100px; border-radius: 50%;  /* ← 若干小さく */
+      margin: 0 auto 0.8rem;
       background: rgba(255,255,255,0.3);
       display: flex; align-items: center; justify-content: center;
-      font-size: 3rem;
+      font-size: 2.5rem;
     }
-    h1 { font-size: 2rem; margin-bottom: 0.5rem; }
-    .tagline { opacity: 0.9; font-size: 1rem; }
+    h1 { font-size: 1.6rem; margin-bottom: 0.3rem; }  /* ← 若干小さく */
+    .tagline { opacity: 0.9; font-size: 0.95rem; }
     
-    /* Map - 改良版 */
+    /* Map - 最適化版 */
     .map-container {
-      max-width: 1400px;
-      margin: -2rem auto 3rem;
+      max-width: 1200px;  /* ← 幅を少し狭く（地域カードと同程度） */
+      margin: -1.5rem auto 2.5rem;
       padding: 0 1rem;
     }
     .map-wrapper {
       position: relative;
-      padding-bottom: 50%;
+      padding-bottom: 35%;  /* ← PC: 高さをスリム化 */
       height: 0;
       overflow: hidden;
       border-radius: 16px;
@@ -175,16 +175,34 @@
       border-top: 1px solid var(--border);
     }
     
+    /* 📱 スマホ用最適化 */
     @media (max-width: 768px) {
-      h1 { font-size: 1.5rem; }
+      header {
+        padding: 1.5rem 1rem 1rem;  /* ← 上下をさらに詰める */
+      }
+      .avatar {
+        width: 80px; height: 80px;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+      h1 { font-size: 1.3rem; }
+      .tagline { font-size: 0.9rem; }
+      
+      .map-container {
+        margin: -1rem auto 2rem;
+      }
+      .map-wrapper {
+        padding-bottom: 50%;  /* ← スマホ: 高さを 50% に調整 */
+        border-radius: 12px;
+      }
+      
       .region-header { padding: 1.2rem 1rem; }
+      .region-title { font-size: 1.3rem; }
+      .region-icon { font-size: 1.6rem; }
+      
       .countries-grid { 
         grid-template-columns: 1fr;
         padding: 0 1rem 1.5rem;
-      }
-      .map-wrapper {
-        padding-bottom: 75%;
-        border-radius: 12px;
       }
     }
   </style>
@@ -196,11 +214,11 @@
     <p class="tagline">9ヶ月にわたる冒険の記録</p>
   </header>
 
-  <!-- Google My Maps - 改良版 -->
+  <!-- Google My Maps - 最適化版 -->
   <div class="map-container">
     <div class="map-wrapper">
       <iframe 
-        src="https://www.google.com/maps/d/embed?mid=1PTaR_Ji4j2ka1GdQN8KCEAeVErTuES4&hl=ja&ll=35,65&z=4"
+        src="https://www.google.com/maps/d/embed?mid=1PTaR_Ji4j2ka1GdQN8KCEAeVErTuES4&hl=ja&ll=40,45&z=3"
         allowfullscreen>
       </iframe>
     </div>
