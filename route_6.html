@@ -1,26 +1,55 @@
-<body>
-<header>
-  <div class="avatar"><img src="profile.jpg" alt="プロフィール画像"></div>
-  <h1>ユーラシア大陸放浪の記録</h1>
-  <p class="tagline">2023年2月以降の放浪記録</p>
-</header>
-<div class="container">
-  <a href="index.html" class="back-btn">← 親ページに戻る</a>
-  <div class="route-header">
-    <span class="route-badge">2025~</span>
-    <h2 class="route-title">大陸遠征ルート</h2>
-  </div>
-
-  <p class="sub-date">2025/08/08 ~ 08/12</p>
-  <ul class="timeline">
-    <li>廈門</li><li>泉州</li><li>汕頭</li><li>潮州</li>
-  </ul>
-
-  <p class="sub-date">2025/09/12 ~ 09/22</p>
-  <ul class="timeline">
-    <li>イスタンブール</li><li>フュッセン</li><li>アウクスブルク</li><li>ローテンブルク</li><li>ヴュルツブルク</li><li>レーゲンスブルク</li><li>バンベルク</li><li>バイロイト</li><li>ライプツィヒ</li><li>ドレスデン</li><li>フライジング</li><li>ミュンヘン</li>
-  </ul>
-</div>
-<footer><p>&copy; 2026 eingypsygypsy24. All adventures.</p></footer>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ルート歴 | 旅の記録</title>
+<style>
+:root{
+  --bg:#f5f7fa;--card:#fff;--text:#111827;--sub:#4b5563;--accent:#2563eb;--border:#e5e7eb;
+  --europe:#0ea5e9;--westasia:#f59e0b;--eastasia:#ef4444;--southeastasia:#10b981;--other:#8b5cf6;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Meiryo",sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.6;
+}
+/* Header */
+header{text-align:center;padding:2rem 1rem 1.5rem;background:linear-gradient(135deg,#059669,#2563eb);color:#fff}
+.avatar{width:100px;height:100px;border-radius:50%;margin:0 auto .8rem;overflow:hidden;background:rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center}
+.avatar img{width:100%;height:100%;object-fit:cover}
+h1{font-size:1.6rem;margin-bottom:.3rem}.tagline{opacity:.9;font-size:.95rem}
+/* Container */
+.container{max-width:800px;margin:0 auto;padding:0 1rem 3rem}
+.back-btn{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--sub);font-weight:600;margin:1.5rem 0 2rem;padding:.6rem 1rem;border-radius:8px;background:var(--card);box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .2s,box-shadow .2s}
+.back-btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.1);color:var(--accent)}
+/* Route Header */
+.route-header{text-align:center;padding:2rem 1rem;margin-bottom:2rem;background:var(--card);border-radius:16px;box-shadow:0 4px 12px rgba(0,0,0,.08);border-top:4px solid var(--accent)}
+.route-badge{display:inline-block;background:var(--accent);color:#fff;padding:.3rem .8rem;border-radius:50px;font-size:.8rem;font-weight:600;margin-bottom:.8rem}
+.route-title{font-size:1.5rem;font-weight:700;margin-bottom:.3rem}
+.route-date{color:var(--sub);font-size:1rem}
+/* Timeline */
+.timeline{position:relative;padding-left:2rem;margin:0}
+.timeline::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),var(--border))}
+.timeline-item{position:relative;padding:1.2rem 0 1.2rem 1.5rem;display:flex;align-items:flex-start;gap:1rem}
+.timeline-item::before{content:'';position:absolute;left:-1px;top:1.4rem;width:16px;height:16px;background:var(--card);border:3px solid var(--accent);border-radius:50%;z-index:1}
+.city-name{font-size:1.05rem;font-weight:500;color:var(--text)}
+/* Sub-date divider (for route_6) */
+.sub-divider{margin:2.5rem 0 1.5rem;padding-top:1.5rem;border-top:2px dashed var(--border);text-align:center}
+.sub-date{display:inline-block;background:var(--card);padding:.3rem 1rem;border-radius:50px;font-size:.9rem;font-weight:600;color:var(--accent);box-shadow:0 2px 8px rgba(0,0,0,.06)}
+/* Footer */
+footer{text-align:center;padding:2rem;background:var(--card);color:var(--sub);border-top:1px solid var(--border);margin-top:3rem}
+/* 📱 Mobile */
+@media(max-width:768px){
+  header{padding:1.5rem 1rem 1rem}
+  .avatar{width:80px;height:80px;font-size:2rem;margin-bottom:.6rem}
+  h1{font-size:1.3rem}.tagline{font-size:.9rem}
+  .container{padding:0 .5rem 2.5rem}
+  .route-header{padding:1.5rem 1rem;margin-bottom:1.5rem}
+  .route-title{font-size:1.3rem}.route-date{font-size:.95rem}
+  .timeline{padding-left:1.8rem}
+  .timeline-item{padding:1rem 0 1rem 1.3rem}
+  .city-name{font-size:1rem}
+}
+</style>
+</head>
