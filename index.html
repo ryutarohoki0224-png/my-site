@@ -215,59 +215,6 @@
         padding: 0 1rem 1.5rem;
       }
     }
-    
-    /* ▼▼▼ 修正：ルート歴グリッド（他セクションと完全統一） ▼▼▼ */
-    .route-grid {
-      display: none;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* ← .countries-grid と同じ */
-      gap: 1.5rem; /* ← .countries-grid と同じ */
-      padding: 0 2rem 2rem; /* ← .countries-grid と同じ */
-    }
-    .route-grid.active { display: grid; }
-    .route-btn {
-      background: #f9fafb; /* ← .country-card と同じ */
-      border-radius: 12px; /* ← .country-card と同じ */
-      padding: 1.2rem; /* ← .country-card と同じ */
-      border-left: 4px solid var(--accent); /* ← .country-card と同じ */
-      text-decoration: none;
-      color: inherit;
-      display: block; /* ← .country-link と同じ */
-      transition: transform 0.3s, box-shadow 0.3s; /* ← .country-card と同じ */
-    }
-    .route-btn:hover {
-      transform: translateY(-4px); /* ← .country-card:hover と同じ */
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1); /* ← .country-card:hover と同じ */
-    }
-    .route-btn-content {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .route-btn-badge {
-      background: var(--accent);
-      color: white;
-      padding: 0.2rem 0.6rem;
-      border-radius: 50px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      align-self: flex-start;
-    }
-    .route-btn-title {
-      font-size: 1.1rem; /* ← .country-name と同じ */
-      font-weight: 600; /* ← .country-name と同じ */
-      color: var(--text);
-    }
-    .route-btn-date {
-      font-size: 0.9rem; /* ← country-card 内の p と同じ */
-      color: var(--sub); /* ← country-card 内の p と同じ */
-    }
-    @media (max-width: 768px) {
-      .route-grid { 
-        grid-template-columns: 1fr; /* ← .countries-grid @media と同じ */
-        padding: 0 1rem 1.5rem; /* ← .countries-grid @media と同じ */
-      }
-    }
-    /* ▲▲▲ 修正終わり ▲▲▲ */
   </style>
 </head>
 <body>
@@ -588,10 +535,10 @@
       }
     }
     
-    // ▼▼▼ 追加：ルート歴の開閉機能 ▼▼▼
+    // ▼▼▼ 修正：ルート歴の開閉機能 ▼▼▼
     function toggleRouteHistory(header) {
       const card = header.parentElement;
-      const content = card.querySelector('.route-grid');
+      const content = card.querySelector('.countries-grid');  // ← .route-grid → .countries-grid に修正
       const icon = card.querySelector('.toggle-icon');
       
       const isActive = content.classList.contains('active');
@@ -604,7 +551,7 @@
         icon.style.transform = 'rotate(180deg)';
       }
     }
-    // ▲▲▲ 追加終わり ▲▲▲
+    // ▲▲▲ 修正終わり ▲▲▲
     
     function toggleRegion(header) {
       const card = header.parentElement;
