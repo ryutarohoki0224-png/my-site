@@ -183,7 +183,7 @@
         padding: 0 1rem 1.5rem;
       }
       .map-wrapper {
-        padding-bottom: 60%;
+        padding-bottom: 75%;
         border-radius: 12px;
       }
     }
@@ -203,6 +203,14 @@
         src="https://www.google.com/maps/d/embed?mid=1PTaR_Ji4j2ka1GdQN8KCEAeVErTuES4&hl=ja&ll=35,65&z=4"
         allowfullscreen>
       </iframe>
+    </div>
+    <!-- 【追加】スマホ用：フルスクリーンリンク -->
+    <div style="text-align:center;margin-top:0.8rem">
+      <a href="https://www.google.com/maps/d/viewer?mid=1PTaR_Ji4j2ka1GdQN8KCEAeVErTuES4&hl=ja" 
+         target="_blank" 
+         style="font-size:0.85rem;color:#2563eb;text-decoration:none;font-weight:500">
+        🗺️ 大きい画面で地図を開く
+      </a>
     </div>
   </div>
 
@@ -372,6 +380,12 @@
           </a>
         </div>
         <div class="country-card" style="border-color: var(--eastasia);">
+          <a href="east-asia_japan.html" class="country-link">
+            <div class="country-name">🇯🇵 日本</div>
+            <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
+          </a>
+        </div>
+        <div class="country-card" style="border-color: var(--eastasia);">
           <a href="east-asia_taiwan.html" class="country-link">
             <div class="country-name">🇹🇼 台湾</div>
             <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
@@ -402,15 +416,15 @@
             <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
           </a>
         </div>
-        < div class="country-card" style="border-color: var(--southeastasia);">
+        <div class="country-card" style="border-color: var(--southeastasia);">
           <a href="southeast-asia_singapore.html" class="country-link">
             <div class="country-name">🇸🇬 シンガポール</div>
             <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
           </a>
+        </div>
       </div>
     </div>
-   </div>
-    
+
     <!-- その他 -->
     <div class="region-card region-other">
       <div class="region-header" onclick="toggleRegion(this)">
