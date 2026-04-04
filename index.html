@@ -34,19 +34,20 @@
     h1 { font-size: 2rem; margin-bottom: 0.5rem; }
     .tagline { opacity: 0.9; font-size: 1rem; }
     
-    /* Map */
+    /* Map - 改良版 */
     .map-container {
-      max-width: 1200px;
-      margin: -2rem auto 2rem;
+      max-width: 1400px;
+      margin: -2rem auto 3rem;
       padding: 0 1rem;
     }
     .map-wrapper {
       position: relative;
-      padding-bottom: 56.25%;
+      padding-bottom: 50%;
       height: 0;
       overflow: hidden;
       border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      border: 3px solid white;
     }
     .map-wrapper iframe {
       position: absolute;
@@ -181,6 +182,10 @@
         grid-template-columns: 1fr;
         padding: 0 1rem 1.5rem;
       }
+      .map-wrapper {
+        padding-bottom: 60%;
+        border-radius: 12px;
+      }
     }
   </style>
 </head>
@@ -191,11 +196,11 @@
     <p class="tagline">9ヶ月にわたる冒険の記録</p>
   </header>
 
-  <!-- Google My Maps -->
+  <!-- Google My Maps - 改良版 -->
   <div class="map-container">
     <div class="map-wrapper">
       <iframe 
-        src="https://www.google.com/maps/d/embed?mid=1PTaR_Ji4j2ka1GdQN8KCEAeVErTuES4&hl=ja&ll=45,45&z=3"
+        src="https://www.google.com/maps/d/embed?mid=1PTaR_Ji4j2ka1GdQN8KCEAeVErTuES4&hl=ja&ll=35,65&z=4"
         allowfullscreen>
       </iframe>
     </div>
@@ -245,12 +250,6 @@
           </a>
         </div>
         <div class="country-card" style="border-color: var(--europe);">
-  　　　  <a href="europe_czechia.html" class="country-link">
-    　　　　<div class="country-name">🇨🇿 チェコ</div>
-    　　　　<p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
-  　　　　</a>
-　　　　 </div> 
-        <div class="country-card" style="border-color: var(--europe);">
           <a href="europe/spain.html" class="country-link">
             <div class="country-name">🇪🇸 スペイン</div>
             <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
@@ -265,6 +264,12 @@
         <div class="country-card" style="border-color: var(--europe);">
           <a href="europe/belgium.html" class="country-link">
             <div class="country-name">🇧🇪 ベルギー</div>
+            <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
+          </a>
+        </div>
+        <div class="country-card" style="border-color: var(--europe);">
+          <a href="europe/czechia.html" class="country-link">
+            <div class="country-name">🇨🇿 チェコ</div>
             <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
           </a>
         </div>
