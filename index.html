@@ -174,25 +174,31 @@
       color: var(--sub);
       border-top: 1px solid var(--border);
     }
-    
-    /* 📱 スマホ用最適化 */
+
+        /* 📱 スマホ用最適化 */
     @media (max-width: 768px) {
       header {
-        padding: 1.5rem 1rem 1rem;  /* ← 上下をさらに詰める */
+        padding: 1.2rem 1rem 0.8rem;  /* ← 上下をさらに詰める */
       }
       .avatar {
-        width: 80px; height: 80px;
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
+        width: 70px; height: 70px;  /* ← さらに小さく */
+        font-size: 1.8rem;
+        margin-bottom: 0.4rem;
       }
-      h1 { font-size: 1.3rem; }
-      .tagline { font-size: 0.9rem; }
+      h1 { 
+        font-size: 1.2rem;  /* ← さらに小さく */
+        margin-bottom: 0.2rem;
+      }
+      .tagline { 
+        font-size: 0.85rem;
+        margin-bottom: 0;
+      }
       
       .map-container {
-        margin: -1rem auto 2rem;
+        margin: -0.8rem auto 2rem;  /* ← 上部余白をさらに詰める */
       }
       .map-wrapper {
-        padding-bottom: 50%;  /* ← スマホ: 高さを 50% に調整 */
+        padding-bottom: 85%;  /* ← スマホ: 縦長化（85%） */
         border-radius: 12px;
       }
       
