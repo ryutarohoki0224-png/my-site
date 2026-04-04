@@ -3,37 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🇹🇼 台湾 | 旅の記録</title>
+<title>🇹 台湾 | 旅の記録</title>
 <style>
 body{font-family:system-ui,sans-serif;background:#f5f7fa;margin:0;padding:20px}
 .back{display:inline-block;margin-bottom:15px;color:#333;text-decoration:none;font-weight:bold}
 h1{color:#ef4444;text-align:center;margin:20px 0}
 
-/* --- レイアウト変更点 --- */
 .grid {
-    column-count: 3; /* PC画面は3列表示 */
-    column-gap: 0;   /* 列の間の隙間をゼロに */
+    column-count: 3;
+    column-gap: 0;
     max-width: 1100px;
     margin: 0 auto;
+    opacity: 0;           /* ← 最初は非表示 */
+    transition: opacity 0.5s ease;
+}
+.grid.loaded {
+    opacity: 1;           /* ← 読み込み完了で表示 */
 }
 .instagram-media {
     width: 100% !important;
     min-width: unset !important;
-    margin-bottom: 0; /* 上下の隙間をゼロに */
-    break-inside: avoid; /* 投稿が途中で分断されないように */
+    margin-bottom: 0 !important;
+    break-inside: avoid;
+    min-height: 420px;
+    background: #f0f0f0;   /* ← ローディング中のスケルトン */
 }
-/* スマホ画面は2列、極小画面は1列に */
 @media (max-width: 800px) { .grid { column-count: 2; } }
 @media (max-width: 500px) { .grid { column-count: 1; } }
-/* ----------------- */
-
 </style>
 </head>
 <body>
 <a href="index.html" class="back">← 地域一覧に戻る</a>
-<h1>🇹 台湾の旅</h1>
+<h1>🇹🇼 台湾の旅</h1>
 
-<div class="grid">
+<div class="grid" id="instaGrid">
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CoOvdgVvjBc/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CoO0QLTvVHw/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CoO08YjPY-L/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
@@ -52,5 +55,13 @@ h1{color:#ef4444;text-align:center;margin:20px 0}
 </div>
 
 <script async defer src="//www.instagram.com/embed.js"></script>
+<script>
+// Instagram埋め込み完了後にフェードイン
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        document.getElementById('instaGrid').classList.add('loaded');
+    }, 500);  // 0.5秒待ってから表示
+});
+</script>
 </body>
 </html>
