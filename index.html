@@ -30,10 +30,10 @@
       background: rgba(255,255,255,0.3);
       display: flex; align-items: center; justify-content: center;
       font-size: 2.5rem;
-      overflow: hidden;  /* ← 追加 */
+      overflow: hidden;
     }
     .avatar img {
-      width: 100%; height: 100%; object-fit: cover;  /* ← 追加 */
+      width: 100%; height: 100%; object-fit: cover;
     }
     h1 { font-size: 1.6rem; margin-bottom: 0.3rem; }
     .tagline { opacity: 0.9; font-size: 0.95rem; }
@@ -58,6 +58,73 @@
       top: 0; left: 0;
       width: 100%; height: 100%;
       border: none;
+    }
+    
+    /* Route Section - 旅の軌跡 */
+    .route-section {
+      max-width: 1200px;
+      margin: 0 auto 2.5rem;
+      padding: 0 1rem;
+    }
+    .route-title {
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+    }
+    .route-card {
+      background: var(--card);
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+    .route-header {
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f9fafb;
+      font-weight: 600;
+    }
+    .route-header:hover { background: #f3f4f6; }
+    .route-period {
+      font-size: 0.85rem;
+      color: var(--sub);
+      font-weight: 400;
+      margin-left: 0.5rem;
+    }
+    .route-content {
+      display: none;
+      padding: 1rem 1.5rem 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .route-card.active .route-content { display: block; }
+    .route-card.active .toggle-icon { transform: rotate(180deg); }
+    .route-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.8rem 0 0;
+    }
+    .route-list li {
+      padding: 0.3rem 0;
+      font-size: 0.95rem;
+      color: var(--sub);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .route-list li::before {
+      content: "→";
+      color: var(--accent);
+      font-weight: bold;
+    }
+    .toggle-icon-route {
+      font-size: 1.2rem;
+      transition: transform 0.3s;
+      color: var(--sub);
     }
     
     /* Regions */
@@ -179,7 +246,7 @@
       border-top: 1px solid var(--border);
     }
 
-    /* 📱 スマホ用最適化 */
+        /* 📱 スマホ用最適化 */
     @media (max-width: 768px) {
       header {
         padding: 1.2rem 1rem 0.8rem;
@@ -205,6 +272,11 @@
         padding-bottom: 85%;
         border-radius: 12px;
       }
+      
+      .route-title { font-size: 1.2rem; margin-bottom: 1rem; }
+      .route-header { padding: 0.9rem 1.2rem; font-size: 0.95rem; }
+      .route-content { padding: 0.9rem 1.2rem 1.2rem; }
+      .route-list li { font-size: 0.9rem; }
       
       .region-header { padding: 1.2rem 1rem; }
       .region-title { font-size: 1.3rem; }
@@ -244,6 +316,29 @@
       </a>
     </div>
   </div>
+
+  <!-- 旅の軌跡セクション -->
+  <section class="route-section">
+    <h2 class="route-title">🌏 ルート歴</h2>
+    
+    <div class="route-card">
+      <div class="route-header" onclick="toggleRoute(this)">
+        <span>📍 5大陸横断の旅 <span class="route-period">2023.2-2024.2</span></span>
+        <span class="toggle-icon-route">▼</span>
+      </div>
+      <div class="route-content">
+        <p style="margin:0 0 0.5rem;color:var(--sub);font-size:0.9rem">🗺️ 9ヶ月にわたるユーラシア大陸横断の軌跡</p>
+        <ul class="route-list">
+          <li>ヨーロッパ（ドイツ・フランス・イタリア・スペイン・ポルトガル・スイス・英国・ベルギー・チェコ）</li>
+          <li>西アジア（トルコ・イラン・サウジ・UAE・エジプト）</li>
+          <li>東アジア（中国・香港・台湾・日本）</li>
+          <li>東南アジア（マレーシア・タイ・シンガポール）</li>
+          <li>その他（インド）</li>
+        </ul>
+      </div>
+    </div>
+    
+  </section>
 
   <!-- Regions -->
   <div class="regions-container">
@@ -466,6 +561,14 @@
       if (mapIframe) {
         mapIframe.src = 'https://www.google.com/maps/d/embed?mid=1PTaR_Ji4j2ka1GdQN8KCEAeVErTuES4&hl=ja&ll=45,30&z=2';
       }
+    }
+    
+    // 旅のルート折りたたみ機能
+    function toggleRoute(header) {
+      const card = header.parentElement;
+      const wasActive = card.classList.contains('active');
+      document.querySelectorAll('.route-card').forEach(c => c.classList.remove('active'));
+      if (!wasActive) card.classList.add('active');
     }
     
     function toggleRegion(header) {
