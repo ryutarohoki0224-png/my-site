@@ -219,25 +219,24 @@
     /* ▼▼▼ 修正：ルート歴グリッド（他セクションと完全統一） ▼▼▼ */
     .route-grid {
       display: none;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.5rem;
-      padding: 0 2rem 2rem; /* ← .countries-grid と完全一致 */
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* ← .countries-grid と同じ */
+      gap: 1.5rem; /* ← .countries-grid と同じ */
+      padding: 0 2rem 2rem; /* ← .countries-grid と同じ */
     }
     .route-grid.active { display: grid; }
     .route-btn {
-      background: #f9fafb;
-      border-radius: 12px;
-      padding: 1.2rem; /* ← .country-card と完全一致 */
-      border-left: 4px solid var(--accent); /* ← .country-card と完全一致 */
+      background: #f9fafb; /* ← .country-card と同じ */
+      border-radius: 12px; /* ← .country-card と同じ */
+      padding: 1.2rem; /* ← .country-card と同じ */
+      border-left: 4px solid var(--accent); /* ← .country-card と同じ */
       text-decoration: none;
       color: inherit;
-      display: block;
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* ← country-card の影を追加 */
+      display: block; /* ← .country-link と同じ */
+      transition: transform 0.3s, box-shadow 0.3s; /* ← .country-card と同じ */
     }
     .route-btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      transform: translateY(-4px); /* ← .country-card:hover と同じ */
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1); /* ← .country-card:hover と同じ */
     }
     .route-btn-content {
       display: flex;
@@ -245,7 +244,6 @@
       gap: 0.5rem;
     }
     .route-btn-badge {
-      display: inline-block;
       background: var(--accent);
       color: white;
       padding: 0.2rem 0.6rem;
@@ -255,21 +253,18 @@
       align-self: flex-start;
     }
     .route-btn-title {
-      font-size: 1.1rem;
-      font-weight: 600;
+      font-size: 1.1rem; /* ← .country-name と同じ */
+      font-weight: 600; /* ← .country-name と同じ */
       color: var(--text);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem; /* ← .country-name と揃える */
     }
     .route-btn-date {
-      font-size: 0.9rem;
-      color: var(--sub);
+      font-size: 0.9rem; /* ← country-card 内の p と同じ */
+      color: var(--sub); /* ← country-card 内の p と同じ */
     }
     @media (max-width: 768px) {
       .route-grid { 
-        grid-template-columns: 1fr;
-        padding: 0 1rem 1.5rem; /* ← .countries-grid @media と完全一致 */
+        grid-template-columns: 1fr; /* ← .countries-grid @media と同じ */
+        padding: 0 1rem 1.5rem; /* ← .countries-grid @media と同じ */
       }
     }
     /* ▲▲▲ 修正終わり ▲▲▲ */
@@ -293,7 +288,6 @@
         allowfullscreen>
       </iframe>
     </div>
-    <!-- 【追加】スマホ用：フルスクリーンリンク -->
     <div style="text-align:center;margin-top:0.8rem">
       <a href="https://www.google.com/maps/d/viewer?mid=1PTaR_Ji4j2ka1GdQN8KCEAeVErTuES4&hl=ja" 
          target="_blank" 
@@ -380,7 +374,7 @@
         </div>
         <div class="country-card" style="border-color: var(--europe);">
           <a href="europe_uk.html" class="country-link">
-            <div class="country-name">🇬 英国</div>
+            <div class="country-name">🇬🇧 英国</div>
             <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
           </a>
         </div>
@@ -404,7 +398,7 @@
         </div>
         <div class="country-card" style="border-color: var(--europe);">
           <a href="europe_spain.html" class="country-link">
-            <div class="country-name">🇪 スペイン</div>
+            <div class="country-name">🇪🇸 スペイン</div>
             <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
           </a>
         </div>
@@ -422,7 +416,7 @@
         </div>
         <div class="country-card" style="border-color: var(--europe);">
           <a href="europe_czechia.html" class="country-link">
-            <div class="country-name">🇨 チェコ</div>
+            <div class="country-name">🇨🇿 チェコ</div>
             <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
           </a>
         </div>
@@ -453,7 +447,7 @@
         </div>
         <div class="country-card" style="border-color: var(--westasia);">
           <a href="west-asia_saudi.html" class="country-link">
-            <div class="country-name">🇸 サウジ</div>
+            <div class="country-name">🇸🇦 サウジ</div>
             <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
           </a>
         </div>
@@ -490,13 +484,13 @@
         </div>
         <div class="country-card" style="border-color: var(--eastasia);">
           <a href="east-asia_hongkong.html" class="country-link">
-            <div class="country-name">🇭 香港</div>
+            <div class="country-name">🇭🇰 香港</div>
             <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
           </a>
         </div>
         <div class="country-card" style="border-color: var(--eastasia);">
           <a href="east-asia_japan.html" class="country-link">
-            <div class="country-name">🇯 日本</div>
+            <div class="country-name">🇯🇵 日本</div>
             <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
           </a>
         </div>
@@ -552,7 +546,7 @@
       <div class="countries-grid">
         <div class="country-card" style="border-color: var(--other);">
           <a href="other_india.html" class="country-link">
-            <div class="country-name">🇮 インド</div>
+            <div class="country-name">🇮🇳 インド</div>
             <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
           </a>
         </div>
