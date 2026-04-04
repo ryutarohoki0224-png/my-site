@@ -147,6 +147,30 @@
       display: block;
     }
     
+    /* Instagram Link Button */
+    .insta-link {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .insta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .insta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(220, 39, 67, 0.4);
+    }
+    
     footer {
       text-align: center;
       padding: 2rem;
@@ -197,51 +221,55 @@
       display: none;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 1.5rem;
-      padding: 0 2rem 2rem;  /* ← .countries-grid と完全に同じ */
+      padding: 0 2rem 2rem; /* ← .countries-grid と完全一致 */
     }
     .route-grid.active { display: grid; }
     .route-btn {
       background: #f9fafb;
       border-radius: 12px;
-      padding: 1.2rem;  /* ← .country-card と同じ */
-      border-left: 4px solid var(--accent);  /* ← .country-card と同じ */
+      padding: 1.2rem; /* ← .country-card と完全一致 */
+      border-left: 4px solid var(--accent); /* ← .country-card と完全一致 */
       text-decoration: none;
-      color: var(--text);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      color: inherit;
+      display: block;
       transition: transform 0.3s, box-shadow 0.3s;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;  /* ← 左寄せに */
-      text-align: left;
-      gap: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* ← country-card の影を追加 */
     }
     .route-btn:hover {
       transform: translateY(-4px);
       box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     }
+    .route-btn-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
     .route-btn-badge {
+      display: inline-block;
       background: var(--accent);
       color: white;
       padding: 0.2rem 0.6rem;
       border-radius: 50px;
       font-size: 0.75rem;
       font-weight: 600;
-      align-self: flex-start;  /* ← 左寄せ */
+      align-self: flex-start;
     }
     .route-btn-title {
-      font-size: 1.1rem;  /* ← .country-name と同じ */
+      font-size: 1.1rem;
       font-weight: 600;
-      margin-bottom: 0.2rem;
-      line-height: 1.3;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem; /* ← .country-name と揃える */
     }
     .route-btn-date {
-      font-size: 0.9rem;  /* ← country-card 内の説明文と同じ */
+      font-size: 0.9rem;
       color: var(--sub);
     }
     @media (max-width: 768px) {
       .route-grid { 
         grid-template-columns: 1fr;
-        padding: 0 1rem 1.5rem;  /* ← .countries-grid @media と同じ */
+        padding: 0 1rem 1.5rem; /* ← .countries-grid @media と完全一致 */
       }
     }
     /* ▲▲▲ 修正終わり ▲▲▲ */
@@ -253,7 +281,7 @@
       <img src="profile.jpg" alt="プロフィール画像">
     </div>
     <h1>ユーラシア大陸放浪の記録</h1>
-    <p class="tagline">2023 年 2 月以降の放浪記録</p>
+    <p class="tagline">2023年2月以降の放浪記録</p>
   </header>
 
   <!-- Google My Maps - 最適化版 -->
@@ -265,6 +293,7 @@
         allowfullscreen>
       </iframe>
     </div>
+    <!-- 【追加】スマホ用：フルスクリーンリンク -->
     <div style="text-align:center;margin-top:0.8rem">
       <a href="https://www.google.com/maps/d/viewer?mid=1PTaR_Ji4j2ka1GdQN8KCEAeVErTuES4&hl=ja" 
          target="_blank" 
@@ -285,34 +314,46 @@
     </div>
     <div class="route-grid">
       <a href="route_1.html" class="route-btn">
-        <span class="route-btn-badge">第 1 回</span>
-        <div class="route-btn-title">大陸遠征ルート</div>
-        <div class="route-btn-date">2023.02~05</div>
+        <div class="route-btn-content">
+          <span class="route-btn-badge">第1回</span>
+          <div class="route-btn-title">大陸遠征ルート</div>
+          <div class="route-btn-date">2023.02~05</div>
+        </div>
       </a>
       <a href="route_2.html" class="route-btn">
-        <span class="route-btn-badge">第 2 回</span>
-        <div class="route-btn-title">大陸遠征ルート</div>
-        <div class="route-btn-date">2024.07~09</div>
+        <div class="route-btn-content">
+          <span class="route-btn-badge">第2回</span>
+          <div class="route-btn-title">大陸遠征ルート</div>
+          <div class="route-btn-date">2024.07~09</div>
+        </div>
       </a>
       <a href="route_3.html" class="route-btn">
-        <span class="route-btn-badge">第 3 回</span>
-        <div class="route-btn-title">大陸遠征ルート</div>
-        <div class="route-btn-date">2024.10~11</div>
+        <div class="route-btn-content">
+          <span class="route-btn-badge">第3回</span>
+          <div class="route-btn-title">大陸遠征ルート</div>
+          <div class="route-btn-date">2024.10~11</div>
+        </div>
       </a>
       <a href="route_4.html" class="route-btn">
-        <span class="route-btn-badge">第 4 回</span>
-        <div class="route-btn-title">大陸遠征ルート</div>
-        <div class="route-btn-date">2024.11~01</div>
+        <div class="route-btn-content">
+          <span class="route-btn-badge">第4回</span>
+          <div class="route-btn-title">大陸遠征ルート</div>
+          <div class="route-btn-date">2024.11~01</div>
+        </div>
       </a>
       <a href="route_5.html" class="route-btn">
-        <span class="route-btn-badge">第 5 回</span>
-        <div class="route-btn-title">大陸遠征ルート</div>
-        <div class="route-btn-date">2025.02~03</div>
+        <div class="route-btn-content">
+          <span class="route-btn-badge">第5回</span>
+          <div class="route-btn-title">大陸遠征ルート</div>
+          <div class="route-btn-date">2025.02~03</div>
+        </div>
       </a>
       <a href="route_6.html" class="route-btn">
-        <span class="route-btn-badge">2025~</span>
-        <div class="route-btn-title">大陸遠征ルート</div>
-        <div class="route-btn-date">2025.08~</div>
+        <div class="route-btn-content">
+          <span class="route-btn-badge">2025~</span>
+          <div class="route-btn-title">大陸遠征ルート</div>
+          <div class="route-btn-date">2025.08~</div>
+        </div>
       </a>
     </div>
   </div>
@@ -339,7 +380,7 @@
         </div>
         <div class="country-card" style="border-color: var(--europe);">
           <a href="europe_uk.html" class="country-link">
-            <div class="country-name">🇬🇧 英国</div>
+            <div class="country-name">🇬 英国</div>
             <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
           </a>
         </div>
@@ -363,7 +404,7 @@
         </div>
         <div class="country-card" style="border-color: var(--europe);">
           <a href="europe_spain.html" class="country-link">
-            <div class="country-name">🇪🇸 スペイン</div>
+            <div class="country-name">🇪 スペイン</div>
             <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
           </a>
         </div>
@@ -381,7 +422,7 @@
         </div>
         <div class="country-card" style="border-color: var(--europe);">
           <a href="europe_czechia.html" class="country-link">
-            <div class="country-name">🇨🇿 チェコ</div>
+            <div class="country-name">🇨 チェコ</div>
             <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
           </a>
         </div>
@@ -412,7 +453,7 @@
         </div>
         <div class="country-card" style="border-color: var(--westasia);">
           <a href="west-asia_saudi.html" class="country-link">
-            <div class="country-name">🇸🇦 サウジ</div>
+            <div class="country-name">🇸 サウジ</div>
             <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
           </a>
         </div>
@@ -449,13 +490,13 @@
         </div>
         <div class="country-card" style="border-color: var(--eastasia);">
           <a href="east-asia_hongkong.html" class="country-link">
-            <div class="country-name">🇭🇰 香港</div>
+            <div class="country-name">🇭 香港</div>
             <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
           </a>
         </div>
         <div class="country-card" style="border-color: var(--eastasia);">
           <a href="east-asia_japan.html" class="country-link">
-            <div class="country-name">🇯🇵 日本</div>
+            <div class="country-name">🇯 日本</div>
             <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
           </a>
         </div>
@@ -511,13 +552,21 @@
       <div class="countries-grid">
         <div class="country-card" style="border-color: var(--other);">
           <a href="other_india.html" class="country-link">
-            <div class="country-name">🇮🇳 インド</div>
+            <div class="country-name">🇮 インド</div>
             <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
           </a>
         </div>
       </div>
     </div>
 
+    <!-- Instagram Link -->
+    <div class="insta-link">
+      <a href="https://www.instagram.com/_ein" target="_blank" class="insta-button">
+        <span>📸</span>
+        <span>全写真は Instagram で見る</span>
+      </a>
+    </div>
+    
   </div>
 
   <footer>
