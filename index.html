@@ -244,76 +244,76 @@
     </div>
   </div>
 
-  <!-- ▼▼▼ 修正：ルート歴セクション（他セクションと完全統一） ▼▼▼ -->
-  <div class="region-card" style="border-color: var(--accent);">
-    <div class="region-header" onclick="toggleRouteHistory(this)">
-      <div class="region-title">
-        <span class="region-icon">🌏</span>
-        <span>ルート歴</span>
-      </div>
-      <span class="toggle-icon">▼</span>
-    </div>
-    <div class="countries-grid">
-      <div class="country-card">
-        <a href="route_1.html" class="country-link">
-          <div class="country-name">
-            <span style="background:var(--accent);color:white;padding:0.2rem 0.6rem;border-radius:50px;font-size:0.75rem;font-weight:600">第1回</span>
-            大陸遠征ルート
-          </div>
-          <p style="color: var(--sub); font-size: 0.9rem;">2023.02~05</p>
-        </a>
-      </div>
-      <div class="country-card">
-        <a href="route_2.html" class="country-link">
-          <div class="country-name">
-            <span style="background:var(--accent);color:white;padding:0.2rem 0.6rem;border-radius:50px;font-size:0.75rem;font-weight:600">第2回</span>
-            大陸遠征ルート
-          </div>
-          <p style="color: var(--sub); font-size: 0.9rem;">2024.07~09</p>
-        </a>
-      </div>
-      <div class="country-card">
-        <a href="route_3.html" class="country-link">
-          <div class="country-name">
-            <span style="background:var(--accent);color:white;padding:0.2rem 0.6rem;border-radius:50px;font-size:0.75rem;font-weight:600">第3回</span>
-            大陸遠征ルート
-          </div>
-          <p style="color: var(--sub); font-size: 0.9rem;">2024.10~11</p>
-        </a>
-      </div>
-      <div class="country-card">
-        <a href="route_4.html" class="country-link">
-          <div class="country-name">
-            <span style="background:var(--accent);color:white;padding:0.2rem 0.6rem;border-radius:50px;font-size:0.75rem;font-weight:600">第4回</span>
-            大陸遠征ルート
-          </div>
-          <p style="color: var(--sub); font-size: 0.9rem;">2024.11~01</p>
-        </a>
-      </div>
-      <div class="country-card">
-        <a href="route_5.html" class="country-link">
-          <div class="country-name">
-            <span style="background:var(--accent);color:white;padding:0.2rem 0.6rem;border-radius:50px;font-size:0.75rem;font-weight:600">第5回</span>
-            大陸遠征ルート
-          </div>
-          <p style="color: var(--sub); font-size: 0.9rem;">2025.02~03</p>
-        </a>
-      </div>
-      <div class="country-card">
-        <a href="route_6.html" class="country-link">
-          <div class="country-name">
-            <span style="background:var(--accent);color:white;padding:0.2rem 0.6rem;border-radius:50px;font-size:0.75rem;font-weight:600">2025~</span>
-            大陸遠征ルート
-          </div>
-          <p style="color: var(--sub); font-size: 0.9rem;">2025.08~</p>
-        </a>
-      </div>
-    </div>
-  </div>
-  <!-- ▲▲▲ 修正終わり ▲▲▲ -->
-
   <!-- Regions -->
   <div class="regions-container">
+    
+    <!-- ▼▼▼ 修正：ルート歴セクション（.regions-container 内に移動） ▼▼▼ -->
+    <div class="region-card" style="border-color: var(--accent);">
+      <div class="region-header" onclick="toggleRouteHistory(this)">
+        <div class="region-title">
+          <span class="region-icon">🌏</span>
+          <span>ルート歴</span>
+        </div>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="countries-grid">
+        <div class="country-card">
+          <a href="route_1.html" class="country-link">
+            <div class="country-name">
+              <span style="background:var(--accent);color:white;padding:0.2rem 0.6rem;border-radius:50px;font-size:0.75rem;font-weight:600">第1回</span>
+              大陸遠征ルート
+            </div>
+            <p style="color: var(--sub); font-size: 0.9rem;">2023.02~05</p>
+          </a>
+        </div>
+        <div class="country-card">
+          <a href="route_2.html" class="country-link">
+            <div class="country-name">
+              <span style="background:var(--accent);color:white;padding:0.2rem 0.6rem;border-radius:50px;font-size:0.75rem;font-weight:600">第2回</span>
+              大陸遠征ルート
+            </div>
+            <p style="color: var(--sub); font-size: 0.9rem;">2024.07~09</p>
+          </a>
+        </div>
+        <div class="country-card">
+          <a href="route_3.html" class="country-link">
+            <div class="country-name">
+              <span style="background:var(--accent);color:white;padding:0.2rem 0.6rem;border-radius:50px;font-size:0.75rem;font-weight:600">第3回</span>
+              大陸遠征ルート
+            </div>
+            <p style="color: var(--sub); font-size: 0.9rem;">2024.10~11</p>
+          </a>
+        </div>
+        <div class="country-card">
+          <a href="route_4.html" class="country-link">
+            <div class="country-name">
+              <span style="background:var(--accent);color:white;padding:0.2rem 0.6rem;border-radius:50px;font-size:0.75rem;font-weight:600">第4回</span>
+              大陸遠征ルート
+            </div>
+            <p style="color: var(--sub); font-size: 0.9rem;">2024.11~01</p>
+          </a>
+        </div>
+        <div class="country-card">
+          <a href="route_5.html" class="country-link">
+            <div class="country-name">
+              <span style="background:var(--accent);color:white;padding:0.2rem 0.6rem;border-radius:50px;font-size:0.75rem;font-weight:600">第5回</span>
+              大陸遠征ルート
+            </div>
+            <p style="color: var(--sub); font-size: 0.9rem;">2025.02~03</p>
+          </a>
+        </div>
+        <div class="country-card">
+          <a href="route_6.html" class="country-link">
+            <div class="country-name">
+              <span style="background:var(--accent);color:white;padding:0.2rem 0.6rem;border-radius:50px;font-size:0.75rem;font-weight:600">2025~</span>
+              大陸遠征ルート
+            </div>
+            <p style="color: var(--sub); font-size: 0.9rem;">2025.08~</p>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- ▲▲▲ 修正終わり ▲▲▲ -->
     
     <!-- ヨーロッパ -->
     <div class="region-card region-europe">
@@ -537,16 +537,10 @@
     
     // ▼▼▼ 修正：ルート歴の開閉機能 ▼▼▼
     function toggleRouteHistory(header) {
-      const card = header.parentElement;  // ← .region-card
-      const wasActive = card.classList.contains('active');  // ← 現在の状態を取得
-      
-      // 一度すべて閉じる
+      const card = header.parentElement;
+      const wasActive = card.classList.contains('active');
       document.querySelectorAll('.region-card').forEach(c => c.classList.remove('active'));
-      
-      // クリックされたカードを開く（以前閉じていた場合）
-      if (!wasActive) {
-        card.classList.add('active');
-      }
+      if (!wasActive) card.classList.add('active');
     }
     // ▲▲▲ 修正終わり ▲▲▲
     
