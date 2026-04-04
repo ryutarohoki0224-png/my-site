@@ -122,35 +122,24 @@
       border-radius: 12px;
       padding: 1.2rem;
       border-left: 4px solid var(--accent);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .country-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     }
     .country-name {
       font-size: 1.1rem;
       font-weight: 600;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.5rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
-    
-    /* Instagram Embed */
-    .insta-container {
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-    }
-    .insta-placeholder {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 8px;
-      text-align: center;
-      color: var(--sub);
-      font-size: 0.85rem;
-      border: 2px dashed var(--border);
-    }
-    blockquote.instagram-media {
-      margin: 0 auto !important;
-      width: 100% !important;
-      min-width: unset !important;
+    .country-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
     }
     
     /* Instagram Link Button */
@@ -226,59 +215,52 @@
       </div>
       <div class="countries-grid">
         <div class="country-card" style="border-color: var(--europe);">
-          <div class="country-name">🇩 ドイツ</div>
-          <div class="insta-container">
-            <div class="insta-placeholder">PC版Instagramの「埋め込む」からコードをコピーして貼り付け</div>
-          </div>
+          <a href="europe/germany.html" class="country-link">
+            <div class="country-name">🇩🇪 ドイツ</div>
+            <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
+          </a>
         </div>
-        
         <div class="country-card" style="border-color: var(--europe);">
-          <div class="country-name">🇬🇧 英国</div>
-          <div class="insta-container">
-            <div class="insta-placeholder">PC版Instagramの「埋め込む」からコードをコピーして貼り付け</div>
-          </div>
+          <a href="europe/uk.html" class="country-link">
+            <div class="country-name">🇬🇧 英国</div>
+            <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
+          </a>
         </div>
-        
         <div class="country-card" style="border-color: var(--europe);">
-          <div class="country-name">🇫🇷 フランス</div>
-          <div class="insta-container">
-            <div class="insta-placeholder">PC版Instagramの「埋め込む」からコードをコピーして貼り付け</div>
-          </div>
+          <a href="europe/france.html" class="country-link">
+            <div class="country-name">🇫🇷 フランス</div>
+            <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
+          </a>
         </div>
-        
         <div class="country-card" style="border-color: var(--europe);">
-          <div class="country-name">🇮🇹 イタリア</div>
-          <div class="insta-container">
-            <div class="insta-placeholder">PC版Instagramの「埋め込む」からコードをコピーして貼り付け</div>
-          </div>
+          <a href="europe/italy.html" class="country-link">
+            <div class="country-name">🇮🇹 イタリア</div>
+            <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
+          </a>
         </div>
-        
         <div class="country-card" style="border-color: var(--europe);">
-          <div class="country-name">🇨 スイス</div>
-          <div class="insta-container">
-            <div class="insta-placeholder">PC版Instagramの「埋め込む」からコードをコピーして貼り付け</div>
-          </div>
+          <a href="europe/switzerland.html" class="country-link">
+            <div class="country-name">🇨🇭 スイス</div>
+            <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
+          </a>
         </div>
-        
         <div class="country-card" style="border-color: var(--europe);">
-          <div class="country-name">🇪🇸 スペイン</div>
-          <div class="insta-container">
-            <div class="insta-placeholder">PC版Instagramの「埋め込む」からコードをコピーして貼り付け</div>
-          </div>
+          <a href="europe/spain.html" class="country-link">
+            <div class="country-name">🇪🇸 スペイン</div>
+            <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
+          </a>
         </div>
-        
         <div class="country-card" style="border-color: var(--europe);">
-          <div class="country-name">🇵 ポルトガル</div>
-          <div class="insta-container">
-            <div class="insta-placeholder">PC版Instagramの「埋め込む」からコードをコピーして貼り付け</div>
-          </div>
+          <a href="europe/portugal.html" class="country-link">
+            <div class="country-name">🇵🇹 ポルトガル</div>
+            <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
+          </a>
         </div>
-        
         <div class="country-card" style="border-color: var(--europe);">
-          <div class="country-name">🇧🇪 ベルギー</div>
-          <div class="insta-container">
-            <div class="insta-placeholder">PC版Instagramの「埋め込む」からコードをコピーして貼り付け</div>
-          </div>
+          <a href="europe/belgium.html" class="country-link">
+            <div class="country-name">🇧🇪 ベルギー</div>
+            <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
+          </a>
         </div>
       </div>
     </div>
@@ -294,31 +276,28 @@
       </div>
       <div class="countries-grid">
         <div class="country-card" style="border-color: var(--westasia);">
-          <div class="country-name">🇮🇷 イラン</div>
-          <div class="insta-container">
-            <div class="insta-placeholder">PC版Instagramの「埋め込む」からコードをコピーして貼り付け</div>
-          </div>
+          <a href="west-asia/iran.html" class="country-link">
+            <div class="country-name">🇮🇷 イラン</div>
+            <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
+          </a>
         </div>
-        
         <div class="country-card" style="border-color: var(--westasia);">
-          <div class="country-name">🇹🇷 トルコ</div>
-          <div class="insta-container">
-            <div class="insta-placeholder">PC版Instagramの「埋め込む」からコードをコピーして貼り付け</div>
-          </div>
+          <a href="west-asia/turkey.html" class="country-link">
+            <div class="country-name">🇹🇷 トルコ</div>
+            <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
+          </a>
         </div>
-        
         <div class="country-card" style="border-color: var(--westasia);">
-          <div class="country-name">🇸🇦 サウジ</div>
-          <div class="insta-container">
-            <div class="insta-placeholder">PC版Instagramの「埋め込む」からコードをコピーして貼り付け</div>
-          </div>
+          <a href="west-asia/saudi.html" class="country-link">
+            <div class="country-name">🇸🇦 サウジ</div>
+            <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
+          </a>
         </div>
-        
         <div class="country-card" style="border-color: var(--westasia);">
-          <div class="country-name">🇦🇪 UAE</div>
-          <div class="insta-container">
-            <div class="insta-placeholder">PC版Instagramの「埋め込む」からコードをコピーして貼り付け</div>
-          </div>
+          <a href="west-asia/uae.html" class="country-link">
+            <div class="country-name">🇦🇪 UAE</div>
+            <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
+          </a>
         </div>
       </div>
     </div>
@@ -334,45 +313,40 @@
       </div>
       <div class="countries-grid">
         <div class="country-card" style="border-color: var(--eastasia);">
-          <div class="country-name">🇨 中国(華北)</div>
-          <div class="insta-container">
-            <div class="insta-placeholder">PC版Instagramの「埋め込む」からコードをコピーして貼り付け</div>
-          </div>
+          <a href="east-asia/china-north.html" class="country-link">
+            <div class="country-name">🇨🇳 中国(華北)</div>
+            <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
+          </a>
         </div>
-        
         <div class="country-card" style="border-color: var(--eastasia);">
-          <div class="country-name">🇨🇳 中国(華南)</div>
-          <div class="insta-container">
-            <div class="insta-placeholder">PC版Instagramの「埋め込む」からコードをコピーして貼り付け</div>
-          </div>
+          <a href="east-asia/china-south.html" class="country-link">
+            <div class="country-name">🇨🇳 中国(華南)</div>
+            <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
+          </a>
         </div>
-        
         <div class="country-card" style="border-color: var(--eastasia);">
-          <div class="country-name">🇨🇳 中国(西域)</div>
-          <div class="insta-container">
-            <div class="insta-placeholder">PC版Instagramの「埋め込む」からコードをコピーして貼り付け</div>
-          </div>
+          <a href="east-asia/china-west.html" class="country-link">
+            <div class="country-name">🇨🇳 中国(西域)</div>
+            <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
+          </a>
         </div>
-        
         <div class="country-card" style="border-color: var(--eastasia);">
-          <div class="country-name">🇨 中国(東北)</div>
-          <div class="insta-container">
-            <div class="insta-placeholder">PC版Instagramの「埋め込む」からコードをコピーして貼り付け</div>
-          </div>
+          <a href="east-asia/china-northeast.html" class="country-link">
+            <div class="country-name">🇨🇳 中国(東北)</div>
+            <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
+          </a>
         </div>
-        
         <div class="country-card" style="border-color: var(--eastasia);">
-          <div class="country-name">🇭🇰 香港</div>
-          <div class="insta-container">
-            <div class="insta-placeholder">PC版Instagramの「埋め込む」からコードをコピーして貼り付け</div>
-          </div>
+          <a href="east-asia/hongkong.html" class="country-link">
+            <div class="country-name">🇭🇰 香港</div>
+            <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
+          </a>
         </div>
-        
         <div class="country-card" style="border-color: var(--eastasia);">
-          <div class="country-name">🇹🇼 台湾</div>
-          <div class="insta-container">
-            <div class="insta-placeholder">PC版Instagramの「埋め込む」からコードをコピーして貼り付け</div>
-          </div>
+          <a href="east-asia/taiwan.html" class="country-link">
+            <div class="country-name">🇹🇼 台湾</div>
+            <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
+          </a>
         </div>
       </div>
     </div>
@@ -388,17 +362,16 @@
       </div>
       <div class="countries-grid">
         <div class="country-card" style="border-color: var(--southeastasia);">
-          <div class="country-name">🇲🇾 マレーシア</div>
-          <div class="insta-container">
-            <div class="insta-placeholder">PC版Instagramの「埋め込む」からコードをコピーして貼り付け</div>
-          </div>
+          <a href="southeast-asia/malaysia.html" class="country-link">
+            <div class="country-name">🇲🇾 マレーシア</div>
+            <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
+          </a>
         </div>
-        
         <div class="country-card" style="border-color: var(--southeastasia);">
-          <div class="country-name">🇹🇭 タイ</div>
-          <div class="insta-container">
-            <div class="insta-placeholder">PC版Instagramの「埋め込む」からコードをコピーして貼り付け</div>
-          </div>
+          <a href="southeast-asia/thailand.html" class="country-link">
+            <div class="country-name">🇹🇭 タイ</div>
+            <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
+          </a>
         </div>
       </div>
     </div>
@@ -414,17 +387,16 @@
       </div>
       <div class="countries-grid">
         <div class="country-card" style="border-color: var(--other);">
-          <div class="country-name">🇮🇳 インド</div>
-          <div class="insta-container">
-            <div class="insta-placeholder">PC版Instagramの「埋め込む」からコードをコピーして貼り付け</div>
-          </div>
+          <a href="other/india.html" class="country-link">
+            <div class="country-name">🇮🇳 インド</div>
+            <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
+          </a>
         </div>
-        
         <div class="country-card" style="border-color: var(--other);">
-          <div class="country-name">🇪🇬 エジプト</div>
-          <div class="insta-container">
-            <div class="insta-placeholder">PC版Instagramの「埋め込む」からコードをコピーして貼り付け</div>
-          </div>
+          <a href="other/egypt.html" class="country-link">
+            <div class="country-name">🇪🇬 エジプト</div>
+            <p style="color: var(--sub); font-size: 0.9rem;">→ 詳細を見る</p>
+          </a>
         </div>
       </div>
     </div>
@@ -447,16 +419,8 @@
     function toggleRegion(header) {
       const card = header.parentElement;
       const wasActive = card.classList.contains('active');
-      
-      // Close all regions
-      document.querySelectorAll('.region-card').forEach(c => {
-        c.classList.remove('active');
-      });
-      
-      // Open clicked region if it wasn't active
-      if (!wasActive) {
-        card.classList.add('active');
-      }
+      document.querySelectorAll('.region-card').forEach(c => c.classList.remove('active'));
+      if (!wasActive) card.classList.add('active');
     }
   </script>
 </body>
