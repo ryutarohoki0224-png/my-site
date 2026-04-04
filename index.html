@@ -537,18 +537,15 @@
     
     // ▼▼▼ 修正：ルート歴の開閉機能 ▼▼▼
     function toggleRouteHistory(header) {
-      const card = header.parentElement;
-      const content = card.querySelector('.countries-grid');  // ← .route-grid → .countries-grid に修正
-      const icon = card.querySelector('.toggle-icon');
+      const card = header.parentElement;  // ← .region-card
+      const wasActive = card.classList.contains('active');  // ← 現在の状態を取得
       
-      const isActive = content.classList.contains('active');
+      // 一度すべて閉じる
+      document.querySelectorAll('.region-card').forEach(c => c.classList.remove('active'));
       
-      if (isActive) {
-        content.classList.remove('active');
-        icon.style.transform = 'rotate(0deg)';
-      } else {
-        content.classList.add('active');
-        icon.style.transform = 'rotate(180deg)';
+      // クリックされたカードを開く（以前閉じていた場合）
+      if (!wasActive) {
+        card.classList.add('active');
       }
     }
     // ▲▲▲ 修正終わり ▲▲▲
