@@ -224,6 +224,7 @@
   <div class="map-container">
     <div class="map-wrapper">
       <iframe 
+        id="myMap"
         src="https://www.google.com/maps/d/embed?mid=1PTaR_Ji4j2ka1GdQN8KCEAeVErTuES4&hl=ja&ll=40,45&z=3"
         allowfullscreen>
       </iframe>
@@ -453,6 +454,14 @@
   </footer>
 
   <script>
+    // 📱 スマホ版は地図表示範囲を変更（ユーラシア全体を表示）
+    if (window.innerWidth <= 768) {
+      const mapIframe = document.getElementById('myMap');
+      if (mapIframe) {
+        mapIframe.src = 'https://www.google.com/maps/d/embed?mid=1PTaR_Ji4j2ka1GdQN8KCEAeVErTuES4&hl=ja&ll=45,30&z=2';
+      }
+    }
+    
     function toggleRegion(header) {
       const card = header.parentElement;
       const wasActive = card.classList.contains('active');
