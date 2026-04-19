@@ -33,6 +33,18 @@ h1{font-size:1.6rem;margin-bottom:.3rem}.tagline{opacity:.9;font-size:.95rem}
 .timeline::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),var(--border))}
 .timeline-item{position:relative;padding:1.2rem 0 1.2rem 1.5rem;display:flex;align-items:flex-start;gap:1rem}
 .timeline-item::before{content:'';position:absolute;left:-1px;top:50%;transform:translateY(-50%);width:16px;height:16px;background:var(--card);border:3px solid var(--accent);border-radius:50%;z-index:1}
+/* ▼▼▼ 追加：クリック可能な都市のスタイル ▼▼▼ */
+.timeline-item a {
+  text-decoration: none;
+  color: var(--accent);
+  border-bottom: 1px dashed var(--accent);
+  transition: color .2s, border-bottom-style .2s;
+}
+.timeline-item a:hover {
+  color: var(--text);
+  border-bottom-style: solid;
+}
+/* ▲▲▲ 追加終わり ▲▲▲ */
 .city-name{font-size:1.05rem;font-weight:500;color:var(--text)}
 /* Sub-date divider (for route_6) */
 .sub-divider{margin:2.5rem 0 1.5rem;padding-top:1.5rem;border-top:2px dashed var(--border);text-align:center}
@@ -71,29 +83,29 @@ footer{text-align:center;padding:2rem;background:var(--card);color:var(--sub);bo
   </div>
   
   <ul class="timeline">
-    <li class="timeline-item"><span class="city-name">東京都</span></li>
-    <li class="timeline-item"><span class="city-name">広州</span></li>
-    <li class="timeline-item"><span class="city-name">ウルムチ</span></li>
-    <li class="timeline-item"><span class="city-name">テヘラン</span></li>
-    <li class="timeline-item"><span class="city-name">カズビーン</span></li>
-    <li class="timeline-item"><span class="city-name">タブリーズ</span></li>
-    <li class="timeline-item"><span class="city-name">ハマダーン</span></li>
-    <li class="timeline-item"><span class="city-name">カーシャーン</span></li>
-    <li class="timeline-item"><span class="city-name">イスファハーン</span></li>
-    <li class="timeline-item"><span class="city-name">ヤズド</span></li>
-    <li class="timeline-item"><span class="city-name">シーラーズ</span></li>
-    <li class="timeline-item"><span class="city-name">ドバイ</span></li>
-    <li class="timeline-item"><span class="city-name">武漢</span></li>
-    <li class="timeline-item"><span class="city-name">黄山</span></li>
-    <li class="timeline-item"><span class="city-name">黟県</span></li>
-    <li class="timeline-item"><span class="city-name">湖州</span></li>
-    <li class="timeline-item"><span class="city-name">上海</span></li>
-    <li class="timeline-item"><span class="city-name">哈爾賓</span></li>
-    <li class="timeline-item"><span class="city-name">長春</span></li>
-    <li class="timeline-item"><span class="city-name">瀋陽</span></li>
-    <li class="timeline-item"><span class="city-name">丹東</span></li>
-    <li class="timeline-item"><span class="city-name">大連</span></li>
-    <li class="timeline-item"><span class="city-name">大阪</span></li>
+    <li class="timeline-item"><span class="city-name">🇯🇵 東京都</span></li>
+    <li class="timeline-item"><span class="city-name">🇨🇳 広州</span></li>
+    <li class="timeline-item"><span class="city-name">🇨🇳 ウルムチ</span></li>
+    <li class="timeline-item"><a href="west-asia_iran_northwest_tehran.html"><span class="city-name">🇮🇷 テヘラン</span></a></li>
+    <li class="timeline-item"><a href="west-asia_iran_northwest_qazvin.html"><span class="city-name">🇮 カズビーン</span></a></li>
+    <li class="timeline-item"><a href="west-asia_iran_northwest_tabriz.html"><span class="city-name">🇮🇷 タブリーズ</span></a></li>
+    <li class="timeline-item"><a href="west-asia_iran_northwest_hamadan.html"><span class="city-name">🇮🇷 ハマダーン</span></a></li>
+    <li class="timeline-item"><a href="west-asia_iran_central_kashan.html"><span class="city-name">🇮🇷 カーシャーン</span></a></li>
+    <li class="timeline-item"><a href="west-asia_iran_central_isfahan.html"><span class="city-name">🇮🇷 イスファハーン</span></a></li>
+    <li class="timeline-item"><a href="west-asia_iran_south_yazd.html"><span class="city-name">🇮🇷 ヤズド</span></a></li>
+    <li class="timeline-item"><a href="west-asia_iran_south_shiraz.html"><span class="city-name">🇮 シーラーズ</span></a></li>
+    <li class="timeline-item"><a href="west-asia_uae.html"><span class="city-name">🇦🇪 ドバイ</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-central_wuhan.html"><span class="city-name">🇨🇳 武漢</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-central_huangshan.html"><span class="city-name">🇨🇳 黄山</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-central_huangshan.html"><span class="city-name">🇨🇳 県</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-central_huzhou.html"><span class="city-name">🇨🇳 湖州</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-central_shanghai.html"><span class="city-name">🇨🇳 上海</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-northeast_harbin.html"><span class="city-name">🇨 哈爾賓</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-northeast_changchun.html"><span class="city-name">🇨🇳 長春</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-northeast_shenyang.html"><span class="city-name">🇨 瀋陽</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-northeast_dandong.html"><span class="city-name">🇨🇳 丹東</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-northeast_dalian.html"><span class="city-name">🇨🇳 大連</span></a></li>
+    <li class="timeline-item"><span class="city-name">🇯🇵 大阪</span></li>
   </ul>
 </div>
 
