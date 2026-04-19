@@ -33,6 +33,19 @@ h1{font-size:1.6rem;margin-bottom:.3rem}.tagline{opacity:.9;font-size:.95rem}
 .timeline::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),var(--border))}
 .timeline-item{position:relative;padding:1.2rem 0 1.2rem 1.5rem;display:flex;align-items:flex-start;gap:1rem}
 .timeline-item::before{content:'';position:absolute;left:-1px;top:50%;transform:translateY(-50%);width:16px;height:16px;background:var(--card);border:3px solid var(--accent);border-radius:50%;z-index:1}
+/* ▼▼▼ 追加：クリック可能な都市のスタイル ▼▼▼ */
+.timeline-item a {
+  text-decoration: none;
+  color: var(--accent);
+  border-bottom: 1px dashed var(--accent);
+  transition: color .2s, border-bottom-style .2s;
+}
+.timeline-item a:hover {
+  color: var(--text);
+  border-bottom-style: solid;
+}
+/* ▲▲▲ 追加終わり ▲▲▲ */
+
 .city-name{font-size:1.05rem;font-weight:500;color:var(--text)}
 /* Sub-date divider (for route_6) */
 .sub-divider{margin:2.5rem 0 1.5rem;padding-top:1.5rem;border-top:2px dashed var(--border);text-align:center}
@@ -69,37 +82,51 @@ footer{text-align:center;padding:2rem;background:var(--card);color:var(--sub);bo
     <h2 class="route-title">大陸遠征ルート</h2>
   </div>
   
-  <!-- 第1セクション -->
+  <!-- 第1セクション（中国南部） -->
   <div class="sub-divider">
     <span class="sub-date">2025/08/08 ~ 08/12</span>
   </div>
   <ul class="timeline">
-    <li class="timeline-item"><span class="city-name">廈門</span></li>
-    <li class="timeline-item"><span class="city-name">泉州</span></li>
-    <li class="timeline-item"><span class="city-name">汕頭</span></li>
-    <li class="timeline-item"><span class="city-name">潮州</span></li>
+    <li class="timeline-item"><span class="city-name">🇨🇳 廈門</span></li>
+    <li class="timeline-item"><a href="east-asia_china-south_quanzhou.html"><span class="city-name">🇨🇳 泉州</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-south.html"><span class="city-name">🇨🇳 汕頭</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-south.html"><span class="city-name">🇨🇳 潮州</span></a></li>
   </ul>
   
-  <!-- 第2セクション -->
+  <!-- 第2セクション（トルコ・ドイツ） -->
   <div class="sub-divider">
     <span class="sub-date">2025/09/12 ~ 09/22</span>
   </div>
   <ul class="timeline">
-    <li class="timeline-item"><span class="city-name">イスタンブール</span></li>
-    <li class="timeline-item"><span class="city-name">フュッセン</span></li>
-    <li class="timeline-item"><span class="city-name">アウクスブルク</span></li>
-    <li class="timeline-item"><span class="city-name">ローテンブルク</span></li>
-    <li class="timeline-item"><span class="city-name">ヴュルツブルク</span></li>
-    <li class="timeline-item"><span class="city-name">レーゲンスブルク</span></li>
-    <li class="timeline-item"><span class="city-name">バンベルク</span></li>
-    <li class="timeline-item"><span class="city-name">バイロイト</span></li>
-    <li class="timeline-item"><span class="city-name">ライプツィヒ</span></li>
-    <li class="timeline-item"><span class="city-name">ドレスデン</span></li>
-    <li class="timeline-item"><span class="city-name">フライジング</span></li>
-    <li class="timeline-item"><span class="city-name">ミュンヘン</span></li>
+    <li class="timeline-item"><a href="west-asia_turkey_istanbul.html"><span class="city-name">🇹🇷 イスタンブール</span></a></li>
+    <li class="timeline-item"><a href="europe_germany_south_fussen.html"><span class="city-name">🇩🇪 フュッセン</span></a></li>
+    <li class="timeline-item"><a href="europe_germany_south_augsburg.html"><span class="city-name">🇩🇪 アウクスブルク</span></a></li>
+    <li class="timeline-item"><a href="europe_germany_south_rothenburg.html"><span class="city-name">🇩🇪 ローテンブルク</span></a></li>
+    <li class="timeline-item"><a href="europe_germany_south_wurzburg.html"><span class="city-name">🇩🇪 ヴュルツブルク</span></a></li>
+    <li class="timeline-item"><a href="europe_germany_south_regensburg.html"><span class="city-name">🇩🇪 レーゲンスブルク</span></a></li>
+    <li class="timeline-item"><a href="europe_germany_south_bamberg.html"><span class="city-name">🇩🇪 バンベルク</span></a></li>
+    <li class="timeline-item"><span class="city-name">🇩🇪 バイロイト</span></li>
+    <li class="timeline-item"><a href="europe_germany_east_leipzig.html"><span class="city-name">🇩🇪 ライプツィヒ</span></a></li>
+    <li class="timeline-item"><a href="europe_germany_east_dresden.html"><span class="city-name">🇩🇪 ドレスデン</span></a></li>
+    <li class="timeline-item"><a href="europe_germany_south_landshut.html"><span class="city-name">🇩🇪 フライジング</span></a></li>
+    <li class="timeline-item"><a href="europe_germany_south_munich.html"><span class="city-name">🇩🇪 ミュンヘン</span></a></li>
   </ul>
 </div>
-
+  
+  <!-- 第3セクション（英国） -->
+  <div class="sub-divider">
+    <span class="sub-date">2025/04/06 ~ 04/13</span>
+  </div>
+  <ul class="timeline">
+    <li class="timeline-item"><a href="europe_uk_england_london.html"><span class="city-name">🇬🇧󠁧󠁥󠁮󠁧󠁿🏴󠁧󠁢󠁥󠁮󠁧󠁿 ロンドン</span></a></li>
+    <li class="timeline-item"><a href="europe_uk_england_york.html"><span class="city-name">🇬🇧󠁧󠁥󠁮󠁧󠁿🏴󠁧󠁢󠁥󠁮󠁧󠁿 ヨーク</span></a></li>
+    <li class="timeline-item"><a href="europe_uk_england_liverpool.html"><span class="city-name">🇬🇧󠁧󠁥󠁮󠁧󠁿🏴󠁧󠁢󠁥󠁮󠁧󠁿 リバプール</span></a></li>
+    <li class="timeline-item"><a href="europe_uk_england_manchester.html"><span class="city-name">🇬🇧󠁧󠁥󠁮󠁧󠁿🏴󠁧󠁢󠁥󠁮󠁧󠁿 マンチェスター</span></a></li>
+    <li class="timeline-item"><a href="europe_uk_england_bath.html"><span class="city-name">🇬🇧󠁧󠁥󠁮󠁧󠁿🏴󠁧󠁢󠁥󠁮󠁧󠁿 バース</span></a></li>
+    <li class="timeline-item"><a href="europe_uk_england_london.html"><span class="city-name">🇬🇧󠁧󠁥󠁮󠁧󠁿🏴󠁧󠁢󠁥󠁮󠁧󠁿 ロンドン</span></a></li>
+  </ul>
+</div>
+  
 <footer><p>&copy; 2026 eingypsygypsy24. All adventures.</p></footer>
 </body>
 </html>
