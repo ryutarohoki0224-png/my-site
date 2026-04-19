@@ -33,6 +33,18 @@ h1{font-size:1.6rem;margin-bottom:.3rem}.tagline{opacity:.9;font-size:.95rem}
 .timeline::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),var(--border))}
 .timeline-item{position:relative;padding:1.2rem 0 1.2rem 1.5rem;display:flex;align-items:flex-start;gap:1rem}
 .timeline-item::before{content:'';position:absolute;left:-1px;top:50%;transform:translateY(-50%);width:16px;height:16px;background:var(--card);border:3px solid var(--accent);border-radius:50%;z-index:1}
+/* ▼▼▼ 追加：クリック可能な都市のスタイル ▼▼▼ */
+.timeline-item a {
+  text-decoration: none;
+  color: var(--accent);
+  border-bottom: 1px dashed var(--accent);
+  transition: color .2s, border-bottom-style .2s;
+}
+.timeline-item a:hover {
+  color: var(--text);
+  border-bottom-style: solid;
+}
+/* ▲▲▲ 追加終わり ▲▲▲ */
 .city-name{font-size:1.05rem;font-weight:500;color:var(--text)}
 /* Sub-date divider (for route_6) */
 .sub-divider{margin:2.5rem 0 1.5rem;padding-top:1.5rem;border-top:2px dashed var(--border);text-align:center}
@@ -71,28 +83,28 @@ footer{text-align:center;padding:2rem;background:var(--card);color:var(--sub);bo
   </div>
   
   <ul class="timeline">
-    <li class="timeline-item"><span class="city-name">東京</span></li>
-    <li class="timeline-item"><span class="city-name">福州</span></li>
-    <li class="timeline-item"><span class="city-name">重慶</span></li>
-    <li class="timeline-item"><span class="city-name">渭南</span></li>
-    <li class="timeline-item"><span class="city-name">西安</span></li>
-    <li class="timeline-item"><span class="city-name">平遥</span></li>
-    <li class="timeline-item"><span class="city-name">洛陽</span></li>
-    <li class="timeline-item"><span class="city-name">開封</span></li>
-    <li class="timeline-item"><span class="city-name">済南</span></li>
-    <li class="timeline-item"><span class="city-name">曲阜</span></li>
-    <li class="timeline-item"><span class="city-name">青島</span></li>
-    <li class="timeline-item"><span class="city-name">仁川</span></li>
-    <li class="timeline-item"><span class="city-name">北京</span></li>
-    <li class="timeline-item"><span class="city-name">大同</span></li>
-    <li class="timeline-item"><span class="city-name">フフホト</span></li>
-    <li class="timeline-item"><span class="city-name">蘭州</span></li>
-    <li class="timeline-item"><span class="city-name">西寧</span></li>
-    <li class="timeline-item"><span class="city-name">カシュガル</span></li>
-    <li class="timeline-item"><span class="city-name">ヤルカンド</span></li>
-    <li class="timeline-item"><span class="city-name">クチャ</span></li>
-    <li class="timeline-item"><span class="city-name">ウルムチ</span></li>
-    <li class="timeline-item"><span class="city-name">大阪</span></li>
+    <li class="timeline-item"><span class="city-name">🇯🇵 東京</span></li>
+    <li class="timeline-item"><span class="city-name">🇨🇳 福州</span></li>
+    <li class="timeline-item"><a href="east-asia_china-southwest_chongqing.html"><span class="city-name">🇨🇳 重慶</span></a></li>
+    <li class="timeline-item"><span class="city-name">🇨🇳 渭南</span></li>
+    <li class="timeline-item"><a href="east-asia_china-north_xian.html"><span class="city-name">🇨 西安</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-north_pingyao.html"><span class="city-name">🇨🇳 平遥</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-north_luoyang.html"><span class="city-name">🇨🇳 洛陽</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-north_kaifeng.html"><span class="city-name">🇨 開封</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-north_qufu.html"><span class="city-name">🇨🇳 済南</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-north_qufu.html"><span class="city-name">🇨🇳 曲阜</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-north_qingdao.html"><span class="city-name">🇨🇳 青島</span></a></li>
+    <li class="timeline-item"><span class="city-name">🇰🇷 仁川</span></li>
+    <li class="timeline-item"><a href="east-asia_china-north_beijing.html"><span class="city-name">🇨🇳 北京</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-north_datong.html"><span class="city-name">🇨🇳 大同</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-north_hohhot.html"><span class="city-name">🇨🇳 フフホト</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-west_lanzhou.html"><span class="city-name">🇨 蘭州</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-west_xining.html"><span class="city-name">🇨 西寧</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-west_kashgar.html"><span class="city-name">🇨🇳 カシュガル</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-west_yarkand.html"><span class="city-name">🇨🇳 ヤルカンド</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-west_kucha.html"><span class="city-name">🇨 クチャ</span></a></li>
+    <li class="timeline-item"><a href="east-asia_china-west_urumqi.html"><span class="city-name">🇨 ウルムチ</span></a></li>
+    <li class="timeline-item"><span class="city-name">🇯 大阪</span></li>
   </ul>
 </div>
 
