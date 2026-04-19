@@ -33,6 +33,18 @@ h1{font-size:1.6rem;margin-bottom:.3rem}.tagline{opacity:.9;font-size:.95rem}
 .timeline::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),var(--border))}
 .timeline-item{position:relative;padding:1.2rem 0 1.2rem 1.5rem;display:flex;align-items:flex-start;gap:1rem}
 .timeline-item::before{content:'';position:absolute;left:-1px;top:50%;transform:translateY(-50%);width:16px;height:16px;background:var(--card);border:3px solid var(--accent);border-radius:50%;z-index:1}
+/* ▼▼▼ 追加：クリック可能な都市のスタイル ▼▼▼ */
+.timeline-item a {
+  text-decoration: none;
+  color: var(--accent);
+  border-bottom: 1px dashed var(--accent);
+  transition: color .2s, border-bottom-style .2s;
+}
+.timeline-item a:hover {
+  color: var(--text);
+  border-bottom-style: solid;
+}
+/* ▲▲▲ 追加終わり ▲▲▲ */
 .city-name{font-size:1.05rem;font-weight:500;color:var(--text)}
 /* Sub-date divider (for route_6) */
 .sub-divider{margin:2.5rem 0 1.5rem;padding-top:1.5rem;border-top:2px dashed var(--border);text-align:center}
@@ -71,17 +83,17 @@ footer{text-align:center;padding:2rem;background:var(--card);color:var(--sub);bo
   </div>
   
   <ul class="timeline">
-    <li class="timeline-item"><span class="city-name">東京</span></li>
-    <li class="timeline-item"><span class="city-name">上海</span></li>
-    <li class="timeline-item"><span class="city-name">カイロ</span></li>
-    <li class="timeline-item"><span class="city-name">ギザ</span></li>
-    <li class="timeline-item"><span class="city-name">リヤド</span></li>
-    <li class="timeline-item"><span class="city-name">ジェッダ</span></li>
-    <li class="timeline-item"><span class="city-name">メディナ</span></li>
-    <li class="timeline-item"><span class="city-name">ダンマーム</span></li>
-    <li class="timeline-item"><span class="city-name">ムンバイ</span></li>
-    <li class="timeline-item"><span class="city-name">クアラルンプール</span></li>
-    <li class="timeline-item"><span class="city-name">ランカウイ島</span></li>
+    <li class="timeline-item"><span class="city-name">🇯🇵 東京</span></li>
+    <li class="timeline-item"><span class="city-name">🇨🇳 上海</span></li>
+    <li class="timeline-item"><a href="west-asia_egypt.html"><span class="city-name">🇪🇬 カイロ</span></a></li>
+    <li class="timeline-item"><a href="west-asia_egypt.html"><span class="city-name">🇪 ギザ</span></a></li>
+    <li class="timeline-item"><a href="west-asia_saudi_riyadh.html"><span class="city-name">🇸🇦 リヤド</span></a></li>
+    <li class="timeline-item"><a href="west-asia_saudi_jeddah.html"><span class="city-name">🇸🇦 ジェッダ</span></a></li>
+    <li class="timeline-item"><a href="west-asia_saudi_medina.html"><span class="city-name">🇸🇦 メディナ</span></a></li>
+    <li class="timeline-item"><span class="city-name">🇸🇦 ダンマーム</span></li>
+    <li class="timeline-item"><a href="other_india.html"><span class="city-name">🇮🇳 ムンバイ</span></a></li>
+    <li class="timeline-item"><a href="southeast-asia_malaysia.html"><span class="city-name">🇲 クアラルンプール</span></a></li>
+    <li class="timeline-item"><span class="city-name">🇲🇾 ランカウイ島</span></li>
   </ul>
 </div>
 
