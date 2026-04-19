@@ -45,6 +45,19 @@ h1{font-size:1.6rem;margin-bottom:.3rem}.tagline{opacity:.9;font-size:.95rem}
   border-radius:50%;
   z-index:1
 }
+/* ▼▼▼ 追加：クリック可能な都市のスタイル ▼▼▼ */
+.timeline-item a {
+  text-decoration: none;
+  color: var(--accent); /* 青色 */
+  border-bottom: 1px dashed var(--accent); /* 点線下線 */
+  transition: color .2s, border-bottom-style .2s;
+}
+.timeline-item a:hover {
+  color: var(--text); /* ホバー時は黒字 */
+  border-bottom-style: solid; /* ホバー時は実線 */
+}
+/* ▲▲▲ 追加終わり ▲▲▲ */
+
 .city-name{font-size:1.05rem;font-weight:500;color:var(--text)}
 /* Sub-date divider (for route_6) */
 .sub-divider{margin:2.5rem 0 1.5rem;padding-top:1.5rem;border-top:2px dashed var(--border);text-align:center}
@@ -84,44 +97,47 @@ footer{text-align:center;padding:2rem;background:var(--card);color:var(--sub);bo
   
   <ul class="timeline">
     <li class="timeline-item"><span class="city-name">東京</span></li>
-    <li class="timeline-item"><a href="southeast-asia_singapore.html" style="text-decoration:none;color:inherit;"><span class="city-name">シンガポール</span></a></li>
-    <li class="timeline-item"><a href="europe_germany_east_berlin.html" style="text-decoration:none;color:inherit;"><span class="city-name">ベルリン</span></a></li>
-    <li class="timeline-item"><a href="europe_czechia.html" style="text-decoration:none;color:inherit;"><span class="city-name">プラハ</span></a></li>
-    <li class="timeline-item"><a href="europe_germany_south_munich.html" style="text-decoration:none;color:inherit;"><span class="city-name">ミュンヘン</span></a></li>
-    <li class="timeline-item"><a href="europe_germany_south_nuremberg.html" style="text-decoration:none;color:inherit;"><span class="city-name">ニュルンベルク</span></a></li>
-    <li class="timeline-item"><a href="europe_germany_west_frankfurt.html" style="text-decoration:none;color:inherit;"><span class="city-name">フランクフルト</span></a></li>
-    <li class="timeline-item"><a href="europe_germany_west_dusseldorf.html" style="text-decoration:none;color:inherit;"><span class="city-name">デュッセルドルフ</span></a></li>
-    <li class="timeline-item"><a href="europe_germany_west_dusseldorf.html" style="text-decoration:none;color:inherit;"><span class="city-name">メーアブッシュ</span></a></li>
-    <li class="timeline-item"><a href="europe_belgium.html" style="text-decoration:none;color:inherit;"><span class="city-name">ブリュッセル</span></a></li>
-    <li class="timeline-item"><a href="europe_france_paris.html" style="text-decoration:none;color:inherit;"><span class="city-name">パリ</span></a></li>
-    <li class="timeline-item"><a href="europe_france_paris.html" style="text-decoration:none;color:inherit;"><span class="city-name">ベルサイユ</span></a></li>
+    <!-- ▼ インラインスタイル削除し、CSS クラスで制御 ▼ -->
+    <li class="timeline-item"><a href="southeast-asia_singapore.html"><span class="city-name">シンガポール</span></a></li>
+    <li class="timeline-item"><a href="europe_germany_east_berlin.html"><span class="city-name">ベルリン</span></a></li>
+    <li class="timeline-item"><a href="europe_czechia.html"><span class="city-name">プラハ</span></a></li>
+    <li class="timeline-item"><a href="europe_germany_south_munich.html"><span class="city-name">ミュンヘン</span></a></li>
+    <li class="timeline-item"><a href="europe_germany_south_nuremberg.html"><span class="city-name">ニュルンベルク</span></a></li>
+    <li class="timeline-item"><a href="europe_germany_west_frankfurt.html"><span class="city-name">フランクフルト</span></a></li>
+    <li class="timeline-item"><a href="europe_germany_west_dusseldorf.html"><span class="city-name">デュッセルドルフ</span></a></li>
+    <li class="timeline-item"><a href="europe_germany_west_dusseldorf.html"><span class="city-name">メーアブッシュ</span></a></li>
+    <li class="timeline-item"><a href="europe_belgium.html"><span class="city-name">ブリュッセル</span></a></li>
+    <li class="timeline-item"><a href="europe_france_paris.html"><span class="city-name">パリ</span></a></li>
+    <li class="timeline-item"><a href="europe_france_paris.html"><span class="city-name">ベルサイユ</span></a></li>
+    <!-- ▲ 紐づけ不要の都市は <span> のまま ▲ -->
     <li class="timeline-item"><span class="city-name">カレー</span></li>
     <li class="timeline-item"><span class="city-name">ドーバー</span></li>
-    <li class="timeline-item"><a href="europe_uk_england_london.html" style="text-decoration:none;color:inherit;"><span class="city-name">ロンドン</span></a></li>
-    <li class="timeline-item"><a href="europe_uk_scotland.html" style="text-decoration:none;color:inherit;"><span class="city-name">エディンバラ</span></a></li>
-    <li class="timeline-item"><a href="europe_italy_milan.html" style="text-decoration:none;color:inherit;"><span class="city-name">ミラノ</span></a></li>
-    <li class="timeline-item"><a href="europe_italy_florence.html" style="text-decoration:none;color:inherit;"><span class="city-name">フィレンツェ</span></a></li>
-    <li class="timeline-item"><a href="europe_italy_naples.html" style="text-decoration:none;color:inherit;"><span class="city-name">ナポリ</span></a></li>
-    <li class="timeline-item"><a href="europe_italy_rome.html" style="text-decoration:none;color:inherit;"><span class="city-name">ローマ</span></a></li>
-    <li class="timeline-item"><a href="europe_italy_rome.html" style="text-decoration:none;color:inherit;"><span class="city-name">バチカン</span></a></li>
-    <li class="timeline-item"><a href="west-asia_turkey_istanbul.html" style="text-decoration:none;color:inherit;"><span class="city-name">イスタンブール</span></a></li>
-    <li class="timeline-item"><a href="west-asia_turkey_bursa.html" style="text-decoration:none;color:inherit;"><span class="city-name">ブルサ</span></a></li>
-    <li class="timeline-item"><a href="west-asia_turkey_ephesus.html" style="text-decoration:none;color:inherit;"><span class="city-name">クシャダス</span></a></li>
-    <li class="timeline-item"><a href="west-asia_turkey_ephesus.html" style="text-decoration:none;color:inherit;"><span class="city-name">エフェソス</span></a></li>
-    <li class="timeline-item"><a href="west-asia_turkey_izmir.html" style="text-decoration:none;color:inherit;"><span class="city-name">イズミル</span></a></li>
-    <li class="timeline-item"><a href="west-asia_turkey_antalya.html" style="text-decoration:none;color:inherit;"><span class="city-name">アンタルヤ</span></a></li>
+    
+    <li class="timeline-item"><a href="europe_uk_england_london.html"><span class="city-name">ロンドン</span></a></li>
+    <li class="timeline-item"><a href="europe_uk_scotland.html"><span class="city-name">エディンバラ</span></a></li>
+    <li class="timeline-item"><a href="europe_italy_milan.html"><span class="city-name">ミラノ</span></a></li>
+    <li class="timeline-item"><a href="europe_italy_florence.html"><span class="city-name">フィレンツェ</span></a></li>
+    <li class="timeline-item"><a href="europe_italy_naples.html"><span class="city-name">ナポリ</span></a></li>
+    <li class="timeline-item"><a href="europe_italy_rome.html"><span class="city-name">ローマ</span></a></li>
+    <li class="timeline-item"><a href="europe_italy_rome.html"><span class="city-name">バチカン</span></a></li>
+    <li class="timeline-item"><a href="west-asia_turkey_istanbul.html"><span class="city-name">イスタンブール</span></a></li>
+    <li class="timeline-item"><a href="west-asia_turkey_bursa.html"><span class="city-name">ブルサ</span></a></li>
+    <li class="timeline-item"><a href="west-asia_turkey_ephesus.html"><span class="city-name">クシャダス</span></a></li>
+    <li class="timeline-item"><a href="west-asia_turkey_ephesus.html"><span class="city-name">エフェソス</span></a></li>
+    <li class="timeline-item"><a href="west-asia_turkey_izmir.html"><span class="city-name">イズミル</span></a></li>
+    <li class="timeline-item"><a href="west-asia_turkey_antalya.html"><span class="city-name">アンタルヤ</span></a></li>
     <li class="timeline-item"><span class="city-name">アンカラ</span></li>
-    <li class="timeline-item"><a href="west-asia_iran_northwest_tehran.html" style="text-decoration:none;color:inherit;"><span class="city-name">テヘラン</span></a></li>
-    <li class="timeline-item"><a href="west-asia_iran_east_mashhad.html" style="text-decoration:none;color:inherit;"><span class="city-name">マシュハド</span></a></li>
-    <li class="timeline-item"><a href="west-asia_iran_east_mashhad.html" style="text-decoration:none;color:inherit;"><span class="city-name">トゥース</span></a></li>
-    <li class="timeline-item"><a href="west-asia_iran_central_isfahan.html" style="text-decoration:none;color:inherit;"><span class="city-name">イスファハーン</span></a></li>
-    <li class="timeline-item"><a href="west-asia_iran_south_shiraz.html" style="text-decoration:none;color:inherit;"><span class="city-name">シーラーズ</span></a></li>
-    <li class="timeline-item"><a href="west-asia_iran_south_shiraz.html" style="text-decoration:none;color:inherit;"><span class="city-name">ペルセポリス</span></a></li>
+    <li class="timeline-item"><a href="west-asia_iran_northwest_tehran.html"><span class="city-name">テヘラン</span></a></li>
+    <li class="timeline-item"><a href="west-asia_iran_east_mashhad.html"><span class="city-name">マシュハド</span></a></li>
+    <li class="timeline-item"><a href="west-asia_iran_east_mashhad.html"><span class="city-name">トゥース</span></a></li>
+    <li class="timeline-item"><a href="west-asia_iran_central_isfahan.html"><span class="city-name">イスファハーン</span></a></li>
+    <li class="timeline-item"><a href="west-asia_iran_south_shiraz.html"><span class="city-name">シーラーズ</span></a></li>
+    <li class="timeline-item"><a href="west-asia_iran_south_shiraz.html"><span class="city-name">ペルセポリス</span></a></li>
     <li class="timeline-item"><span class="city-name">マスカット</span></li>
-    <li class="timeline-item"><a href="other_india.html" style="text-decoration:none;color:inherit;"><span class="city-name">ムンバイ</span></a></li>
+    <li class="timeline-item"><a href="other_india.html"><span class="city-name">ムンバイ</span></a></li>
     <li class="timeline-item"><span class="city-name">ホーチミン</span></li>
     <li class="timeline-item"><span class="city-name">マラッカ</span></li>
-    <li class="timeline-item"><a href="southeast-asia_malaysia.html" style="text-decoration:none;color:inherit;"><span class="city-name">クアラルンプール</span></a></li>
+    <li class="timeline-item"><a href="southeast-asia_malaysia.html"><span class="city-name">クアラルンプール</span></a></li>
   </ul>
 </div>
 
