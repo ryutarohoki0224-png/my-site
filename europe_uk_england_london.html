@@ -8,73 +8,43 @@
 body{font-family:system-ui,sans-serif;background:#f5f7fa;margin:0;padding:20px}
 .back{display:inline-block;margin-bottom:15px;color:#333;text-decoration:none;font-weight:bold}
 h1{color:#0ea5e9;text-align:center;margin:20px 0}
-/* ▼▼▼ 修正：新着順表示のためのflex設定 ▼▼▼ */
-.grid{
-  display:flex;
-  flex-direction:column-reverse; /* ← 追加順序と表示順序を逆にする */
-  flex-wrap:wrap; /* ← 折り返しを有効化 */
-  align-content:flex-start; /* ← 上から詰めて表示 */
-  max-width:1100px;
-  margin:0 auto;
-  opacity:0;
-  transition:opacity 0.5s ease;
-  height:auto; /* ← 高さを自動に */
-}
-/* 各投稿の幅を指定（3カラム相当） */
-.instagram-media{
-  width:calc(33.333% - 0px) !important;
-  min-width:unset !important;
-  margin-bottom:0 !important;
-  min-height:420px;
-  background:#f0f0f0;
-  box-sizing:border-box;
-}
+.grid{column-count:3;column-gap:0;max-width:1100px;margin:0 auto;opacity:0;transition:opacity 0.5s ease}
 .grid.loaded{opacity:1}
-/* 📱 レスポンシブ対応 */
-@media(max-width:800px){
-  .instagram-media{width:calc(50% - 0px) !important}
-}
-@media(max-width:500px){
-  .instagram-media{width:100% !important}
-}
-/* ▲▲▲ 修正終わり ▲▲▲ */
+.instagram-media{width:100%!important;min-width:unset!important;margin-bottom:0!important;break-inside:avoid;min-height:420px;background:#f0f0f0}
+@media(max-width:800px){.grid{column-count:2}}@media(max-width:500px){.grid{column-count:1}}
 </style>
 </head>
 <body>
 <a href="europe_uk_england.html" class="back">← イングランド一覧に戻る</a>
 <h1>📍ロンドン</h1>
 <div class="grid" id="instaGrid">
-<!-- 既存投稿（下に追加するほど、表示は下になる） -->
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpW4IGCNgi3/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpSvD3pMWvT/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpSueahsBNt/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpSkvY-NDPj/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpQe9TitS5f/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpQeXUhtqCB/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpQdTZTNUhQ/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpQb9QbNpDU/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpQatFRt1J9/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpQZ9J8t-JQ/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpQYwdsNNd0/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpQXpKvNoZB/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpQXKO4tWmn/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpOiFMcICa-/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpOhVQ1ojhk/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpOgWgLoaZJ/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpOe7ZAoX-z/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpLkDeJLdBo/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpLh8iaLM2I/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpLgf3jrryD/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpLfXGMLEpI/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpLYwghL4_Q/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpLYFZ3LuDB/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
-
-<!-- ▼▼▼ 新規投稿（ここに追加するほど、表示は上になる） ▼▼▼ -->
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpLYwghL4_Q/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpLfXGMLEpI/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpLgf3jrryD/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpLh8iaLM2I/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpLkDeJLdBo/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpOe7ZAoX-z/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpOgWgLoaZJ/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpOhVQ1ojhk/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpOiFMcICa-/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpQXKO4tWmn/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpQXpKvNoZB/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpQYwdsNNd0/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpQZ9J8t-JQ/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpQatFRt1J9/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpQb9QbNpDU/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpQdTZTNUhQ/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpQeXUhtqCB/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpQe9TitS5f/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpSkvY-NDPj/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpSueahsBNt/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpSvD3pMWvT/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CpW4IGCNgi3/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DXQsP9KkoFF/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DXabYI2kqSs/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DXab0crEtgk/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DXadMNxEiqw/" data-instgrm-captioned data-instgrm-version="14"></blockquote>
-<!-- ▲▲▲ 新規投稿終わり ▲▲▲ -->
 </div>
 <script async defer src="//www.instagram.com/embed.js"></script>
 <script>
